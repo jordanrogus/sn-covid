@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope) {
+
+	var c = this;	
+	
+	// Function to update table widget with passed in filter
+	$scope.updateTable= function(filter) {
+		
+		// Default filter is to see records opened by current user
+		var defaultFilter = 'opened_by=6816f79cc0a8016401c5a33be04be441';
+		
+		// Add to default filter the passed in filter
+		$scope.$broadcast('widget-filter-breadcrumbs.queryModified', defaultFilter + '^' + filter);
+	
+	};
+			
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>// Default branding
+* {
+	background-color: $background-color;
+  color: $default-font-color; 
+}
+
+.container {
+	min-height: calc(100vh - 85px); /* Measured based on fixed height of header and footer */	color: $default-font-color;
+	width: 100%;
+	position: relative;
+}
+
+.buttons {
+	display: flex; 
+  align-items: center; 
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.buttonDivider{
+    width:15px;
+    height:auto;
+    display:inline-block;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description>Widget showing covid requests</description>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>my-covid-requests</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>My Covid Requests</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	
+	// Initialize Parameters
+	var widgetParams;
+	
+	// Set Parameters - Default Filter to opened by current user
+	data.widgetParams = {
+		table: 'x_179189_covid_19_covid_actions',
+		fields: 'number,short_description,state',
+		o: 'sys_created_on',
+		show_breadcrumbs: true,
+		filter: 'opened_by=6816f79cc0a8016401c5a33be04be441',
+		window_size: 10
+		//view: options.view,
+		//title: options.title,
+	};
+	
+	// Embed Widget
+	data.dataTableWidget = $sp.getWidget('widget-data-table', data.widgetParams);
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-05 18:16:46</sys_created_on>
+        <sys_id>9e42e4532f8220105042d6ab2799b625</sys_id>
+        <sys_mod_count>53</sys_mod_count>
+        <sys_name>My Covid Requests</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_update_name>sp_widget_9e42e4532f8220105042d6ab2799b625</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-05 19:26:31</sys_updated_on>
+        <template><![CDATA[<div class="container">
+  <div class = "buttons">
+    <button ng-click="updateTable('active=true')">
+      Show Active
+    </button>
+    <div class="buttonDivider"/>
+    <button ng-click="updateTable('active=false')">
+      Show Inactive
+    </button>
+    <div class="buttonDivider"/>
+    <button ng-click="updateTable('')">
+      Show All
+    </button>
+  </div>
+  <div>
+     <sp-widget widget=data.dataTableWidget></sp-widget>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

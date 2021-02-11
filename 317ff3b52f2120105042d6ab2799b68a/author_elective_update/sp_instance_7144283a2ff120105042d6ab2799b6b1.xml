@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">f144283a2ff120105042d6ab2799b6ad</sp_column>
+        <sp_widget display_value="Knowledge Related Articles">a8874e5bdb18330076e757a0cf961939</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-22 18:52:26</sys_created_on>
+        <sys_id>7144283a2ff120105042d6ab2799b6b1</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Related Articles</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_update_name>sp_instance_7144283a2ff120105042d6ab2799b6b1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-22 18:56:45</sys_updated_on>
+        <title>Related Articles</title>
+        <url/>
+        <widget_parameters><![CDATA[{
+       "table": {
+              "value": "kb_knowledge",
+              "displayValue": "kb_knowledge"
+       },
+       "display_field": {
+              "value": "",
+              "displayValue": ""
+       },
+       "secondary_fields": {
+              "value": "sys_view_count,rating",
+              "displayValue": "sys_view_count,rating"
+       },
+       "max_records": {
+              "value": "5",
+              "displayValue": "5"
+       },
+       "always_show": {
+              "value": "false",
+              "displayValue": "false"
+       },
+       "show_secondary_fields_label": {
+              "value": "",
+              "displayValue": ""
+       },
+       "knowledge_base": {
+              "value": "",
+              "displayValue": ""
+       },
+       "source_table": {
+              "value": "sc_2_kb",
+              "displayValue": "sc_2_kb"
+       },
+       "source_column": {
+              "value": "sc_cat_item",
+              "displayValue": "sc_cat_item"
+       },
+       "target_column": {
+              "value": "kb_knowledge",
+              "displayValue": "kb_knowledge"
+       },
+       "source_id": {
+              "value": "",
+              "displayValue": ""
+       },
+			 "use_full_width": {
+						"value": "false",
+						"displayValue": "false"
+					}
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=7144283a2ff120105042d6ab2799b6b1"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</application>
+        <file_path/>
+        <instance_id>eac3d649dbd17fc0b847ac44d4961944</instance_id>
+        <instance_name>dev85588</instance_name>
+        <name>sp_instance_7144283a2ff120105042d6ab2799b6b1</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_instance"&gt;&lt;sp_instance action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;class_name/&gt;&lt;color&gt;default&lt;/color&gt;&lt;css/&gt;&lt;glyph/&gt;&lt;id/&gt;&lt;order&gt;1&lt;/order&gt;&lt;roles/&gt;&lt;short_description/&gt;&lt;size&gt;md&lt;/size&gt;&lt;sp_column display_value="1"&gt;f144283a2ff120105042d6ab2799b6ad&lt;/sp_column&gt;&lt;sp_widget display_value="Knowledge Related Articles"&gt;a8874e5bdb18330076e757a0cf961939&lt;/sp_widget&gt;&lt;sys_class_name&gt;sp_instance&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2021-01-22 18:52:26&lt;/sys_created_on&gt;&lt;sys_id&gt;7144283a2ff120105042d6ab2799b6b1&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name&gt;Related Articles&lt;/sys_name&gt;&lt;sys_package display_value="COVID-19" source="x_179189_covid_19"&gt;317ff3b52f2120105042d6ab2799b68a&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="COVID-19"&gt;317ff3b52f2120105042d6ab2799b68a&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_instance_7144283a2ff120105042d6ab2799b6b1&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2021-01-22 18:56:45&lt;/sys_updated_on&gt;&lt;title&gt;Related Articles&lt;/title&gt;&lt;url/&gt;&lt;widget_parameters&gt;&lt;![CDATA[{
+       "table": {
+              "value": "kb_knowledge",
+              "displayValue": "kb_knowledge"
+       },
+       "display_field": {
+              "value": "",
+              "displayValue": ""
+       },
+       "secondary_fields": {
+              "value": "sys_view_count,rating",
+              "displayValue": "sys_view_count,rating"
+       },
+       "max_records": {
+              "value": "5",
+              "displayValue": "5"
+       },
+       "always_show": {
+              "value": "false",
+              "displayValue": "false"
+       },
+       "show_secondary_fields_label": {
+              "value": "",
+              "displayValue": ""
+       },
+       "knowledge_base": {
+              "value": "",
+              "displayValue": ""
+       },
+       "source_table": {
+              "value": "sc_2_kb",
+              "displayValue": "sc_2_kb"
+       },
+       "source_column": {
+              "value": "sc_cat_item",
+              "displayValue": "sc_cat_item"
+       },
+       "target_column": {
+              "value": "kb_knowledge",
+              "displayValue": "kb_knowledge"
+       },
+       "source_id": {
+              "value": "",
+              "displayValue": ""
+       },
+			 "use_full_width": {
+						"value": "false",
+						"displayValue": "false"
+					}
+}]]&gt;&lt;/widget_parameters&gt;&lt;/sp_instance&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=7144283a2ff120105042d6ab2799b6b1"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1856253581</payload_hash>
+        <record_name>Related Articles</record_name>
+        <reverted_from/>
+        <source>5aa04c8a2f2120105042d6ab2799b6f6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-22 18:56:45</sys_created_on>
+        <sys_id>c545247a2ff120105042d6ab2799b6eb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1772b74b8b00000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-22 18:56:45</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>0145247a89f1201072b2fdd514c001eb</update_guid>
+        <update_guid_history>0145247a89f1201072b2fdd514c001eb:1856253581,7544283a98f12010454cc452f3f352b2:-627316948</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">3545647a2ff120105042d6ab2799b620</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-22 18:56:49</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>b43690c9b39d4736a67cf525986d8324</sys_id>
+        <sys_metadata>7144283a2ff120105042d6ab2799b6b1</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Related Articles</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_scope_delete display_value="">01bdd0310e6149608055cb01382d20a9</sys_scope_delete>
+        <sys_update_name>sp_instance_7144283a2ff120105042d6ab2799b6b1</sys_update_name>
+        <sys_update_version display_value="sp_instance_7144283a2ff120105042d6ab2799b6b1">c545247a2ff120105042d6ab2799b6eb</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-22 18:56:49</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

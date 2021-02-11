@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* Black Background w/ White Text */
+* {
+	background-color: $background-color !important;
+  color: $default-font-color;
+}
+
+/* Center Text */
+h2, .text-muted {
+	text-align: center;
+}
+
+/* Hide Borders */
+.b, .alert-info-border {
+	border: none;
+}
+
+/* Ensure Asterisk Colors Stay Red */
+.fa-asterisk {
+	color: $button-color !important;
+}
+
+#sc_cat_item {
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Button CSS */
+
+.panel .panel- .b .wrapper-md, .sc-item-error-messages{
+	display: none;
+}
+
+.sc-fixed{
+	position: absolute;
+  top: 150px;
+  right: 0;
+}
+	
+.form-group button {
+	width: 225px;
+	height: 50px;
+	display:inline-block;
+	border:0.16em solid rgba(255,255,255,0);
+	border-radius:2em;
+	box-sizing: border-box;
+	text-decoration:none;
+	font-weight: bold;
+	color: $default-font-color;
+	text-align:center;
+	transition: all 0.2s;
+	background-color: $button-color !important;
+	font-size: 1.5em;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.form-group button:hover {
+	border-color: rgba(255,255,255,1);
+	padding-right: 24px;
+	padding-left: 8px;
+}
+
+.form-group button:after {
+	content: '»';
+	position: relative;
+	opacity: 0;  
+	top: -2px;
+	right: -25px;
+	transition: 0.5s;
+  }
+  
+.form-group button:hover:after {
+	opacity: 1;
+	right: -15px;
+  }</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>covid-sc-cat-item</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>COVID SC Catalog Item</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-22 18:55:23</sys_created_on>
+        <sys_id>d4e4a83a2ff120105042d6ab2799b6b4</sys_id>
+        <sys_mod_count>49</sys_mod_count>
+        <sys_name>COVID SC Catalog Item</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_update_name>sp_widget_d4e4a83a2ff120105042d6ab2799b6b4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-22 21:21:09</sys_updated_on>
+        <template><![CDATA[<div>
+    <widget id="widget-sc-cat-item-v2"></widget>
+</div>]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</application>
+        <file_path/>
+        <instance_id>eac3d649dbd17fc0b847ac44d4961944</instance_id>
+        <instance_name>dev85588</instance_name>
+        <name>sp_widget_d4e4a83a2ff120105042d6ab2799b6b4</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;/* Black Background w/ White Text */
+* {
+	background-color: $background-color !important;
+  color: $default-font-color;
+}
+
+/* Center Text */
+h2, .text-muted {
+	text-align: center;
+}
+
+/* Hide Borders */
+.b, .alert-info-border {
+	border: none;
+}
+
+/* Ensure Asterisk Colors Stay Red */
+.fa-asterisk {
+	color: $button-color !important;
+}
+
+#sc_cat_item {
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Button CSS */
+
+.panel .panel- .b .wrapper-md, .sc-item-error-messages{
+	display: none;
+}
+
+.sc-fixed{
+	position: absolute;
+  top: 150px;
+  right: 0;
+}
+	
+.form-group button {
+	width: 225px;
+	height: 50px;
+	display:inline-block;
+	border:0.16em solid rgba(255,255,255,0);
+	border-radius:2em;
+	box-sizing: border-box;
+	text-decoration:none;
+	font-weight: bold;
+	color: $default-font-color;
+	text-align:center;
+	transition: all 0.2s;
+	background-color: $button-color !important;
+	font-size: 1.5em;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.form-group button:hover {
+	border-color: rgba(255,255,255,1);
+	padding-right: 24px;
+	padding-left: 8px;
+}
+
+.form-group button:after {
+	content: '»';
+	position: relative;
+	opacity: 0;  
+	top: -2px;
+	right: -25px;
+	transition: 0.5s;
+  }
+  
+.form-group button:hover:after {
+	opacity: 1;
+	right: -15px;
+  }&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;false&lt;/has_preview&gt;&lt;id&gt;covid-sc-cat-item&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]&gt;&lt;/link&gt;&lt;name&gt;COVID SC Catalog Item&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2021-01-22 18:55:23&lt;/sys_created_on&gt;&lt;sys_id&gt;d4e4a83a2ff120105042d6ab2799b6b4&lt;/sys_id&gt;&lt;sys_mod_count&gt;49&lt;/sys_mod_count&gt;&lt;sys_name&gt;COVID SC Catalog Item&lt;/sys_name&gt;&lt;sys_package display_value="COVID-19" source="x_179189_covid_19"&gt;317ff3b52f2120105042d6ab2799b68a&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="COVID-19"&gt;317ff3b52f2120105042d6ab2799b68a&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_d4e4a83a2ff120105042d6ab2799b6b4&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2021-01-22 21:21:09&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div&gt;
+    &lt;widget id="widget-sc-cat-item-v2"&gt;&lt;/widget&gt;
+&lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1066033902</payload_hash>
+        <record_name>COVID SC Catalog Item</record_name>
+        <reverted_from/>
+        <source>5aa04c8a2f2120105042d6ab2799b6f6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-22 21:21:09</sys_created_on>
+        <sys_id>985685fe2f3520105042d6ab2799b6b8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1772bf8ecf80000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-22 21:21:09</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>d05685fe3f35201014e912a7583a81b8</update_guid>
+        <update_guid_history>d05685fe3f35201014e912a7583a81b8:-1066033902,104645fe14352010ae390c273a7ddadb:-2059467310,06f581fe463520107ec7a540ca85afbf:1248085460,e4d541feb5352010bd01ba23b40b4948:-177436477,aca5cdbea03520109d3bb2814420423b:1952881863,2e850dbec8352010e83087584b1b8103:-781684948,8155c1be62352010384ff282938236d0:-1456368854,f33589be0335201054735112e8c0b8b8:735982887,8135097ef1352010526498e86f43d587:-973119755,1915c5be44352010e92a8a3d7868fc33:-883383569,2ae4c5be1a35201083bbf0d526c2a408:1616342158,eec445bedd352010c412ea5f65bf3a87:944320007,1bb4097e5735201062f54ac1f9a21d55:720217184,ab9481be18352010aae4454ea2c618b9:944320007,bc9401bece35201026e72a26cccf60cb:1489143181,7064457ebe352010de9294a687b2dbf6:-1035027107,7a54c97e1a3520109260d275cd9b707a:-313856157,60e3097ecf35201093b1a3a8df05b36b:1492900993,0993893e4b352010650a0e2f14f9e14b:-697347975,ad03893e8b3520101d8cbb53d0eda93c:-1780481139,1d32453e5a3520109278ab9d3cf78e23:1941009933,1de1413ead352010a9a2a7914edcbcd9:720503635,4ab1c5fa1f3520108cf23d56c79440b1:115956996,7081813e433520107512c6b376b318bd:-833795771,2b6145fa283520108b0838ad73c040bc:-985080071,1e61413e06352010e65cf0562d718178:-771666721,eb1141fa7b35201008d429c550bf0547:-833795771,be014dfa63352010225361fbae203387:178951461,58c0c5fa86352010dbfe0adb03b4d588:-446120466,727045fa1a352010509220f6d2c7495d:-1976037574,7e4045fa24352010f2f947a03e20ec54:-335006022,9f30c1fabd352010785814faeae48fe5:-404900119,3320c1facf35201022152cce97efb8de:-253060658,aa1001fa05352010d08661959cd43ec5:1824080651,49f5b83640352010a45cfe6d3160e38d:334977387,78c5b8364f3520101bd228fdc1c67632:-1214696277,23a57836bb352010b31a083fec940f18:602319822,6265bcf2c9352010c11c61e0755db1cf:839657106,fc45b036123520100eee9e3b91c64cfd:1536490915,2315b03623352010b835b6808b10a1f5:-1089128501,2f8470f261352010c4a6e2b0c1746ed7:1062088271,516438f2463520103c99c396cbc15af0:150448367,2a34f4f2c5352010a74660e91cc5bd09:-426185132,7b04f4f2873520101adf7cb8e3783d00:108703801,2db37cb2bd352010fb21291ee0381437:1992725773,4693fcb280352010ea36043ff890902c:-1329831256,aa53bcb2cc35201033d92f83774399fc:1680990292,c869e43e85f120105913cb2a69abb86a:-598505251,9c35e83a25f12010a6b6854c26d03cc7:1044327247,8df4607a49f1201082f35d2fdef41d18:179534835</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">e5b29f6b2f3120105042d6ab2799b632</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-25 15:30:00</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>2d4a6db19d8a41f3a7978d9827f12f31</sys_id>
+        <sys_metadata>d4e4a83a2ff120105042d6ab2799b6b4</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>COVID SC Catalog Item</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_scope_delete display_value="">01bdd0310e6149608055cb01382d20a9</sys_scope_delete>
+        <sys_update_name>sp_widget_d4e4a83a2ff120105042d6ab2799b6b4</sys_update_name>
+        <sys_update_version display_value="sp_widget_d4e4a83a2ff120105042d6ab2799b6b4">985685fe2f3520105042d6ab2799b6b8</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-25 15:30:00</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

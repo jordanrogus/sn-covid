@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="US COVID Data By State" max_length="40" name="x_179189_covid_19_covid_data_us" type="collection">
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="State" max_length="32" name="state" read_only="true" reference="sys_report_map" reference_qual="parent=6ee51951d7320200bd4a4ebfae610354^EQ" reference_qual_condition="parent=6ee51951d7320200bd4a4ebfae610354^EQ" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Data Quality Grade" max_length="10" name="u_data_quality_grade" read_only="true" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Date" max_length="40" name="u_date_data" read_only="true" type="glide_date"/>
+        <element attributes="edge_encryption_enabled=true" label="Death Confirmed" max_length="40" name="u_death_confirmed" read_only="true" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Death Increase DoD" max_length="40" name="u_death_increase" read_only="true" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Hospitalized Cumulative" max_length="40" name="u_hospitalized_cumulative" read_only="true" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Hospitalized Currently" max_length="40" name="u_hospitalized_currently" read_only="true" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Hospitalized Increase DoD" max_length="40" name="u_hospitalized_increase" read_only="true" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Negative Cumulative" max_length="40" name="u_negative_cumulative" read_only="true" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Negative Increase DoD" max_length="40" name="u_negative_increase" read_only="true" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Positive Cumulative" max_length="40" name="u_positive_cumulative" read_only="true" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Positive Increase DoD" max_length="40" name="u_positive_increase" read_only="true" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Total Tests Performed" max_length="40" name="u_total_tests_performed" read_only="true" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Total Test Increase DoD" max_length="40" name="u_total_test_increase" read_only="true" type="integer"/>
+        <index name="index">
+            <element name="state"/>
+        </index>
+    </element>
+</database>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_headers">
+    <sys_rest_message_headers action="DELETE">
+        <name>x-rapidapi-host</name>
+        <rest_message display_value="COVID-19">7cf1cc0e2f2120105042d6ab2799b68f</rest_message>
+        <sys_class_name>sys_rest_message_headers</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-07 22:14:21</sys_created_on>
+        <sys_id>f2624c0e2f2120105042d6ab2799b61e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>x-rapidapi-host</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_update_name>sys_rest_message_headers_f2624c0e2f2120105042d6ab2799b61e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-07 22:20:06</sys_updated_on>
+        <value>covid-19-data.p.rapidapi.com</value>
+    </sys_rest_message_headers>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</application>
+        <file_path/>
+        <instance_id>eac3d649dbd17fc0b847ac44d4961944</instance_id>
+        <instance_name>dev85588</instance_name>
+        <name>sys_rest_message_headers_f2624c0e2f2120105042d6ab2799b61e</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_headers"><sys_rest_message_headers action="INSERT_OR_UPDATE"><name>x-rapidapi-host</name><rest_message display_value="COVID-19">7cf1cc0e2f2120105042d6ab2799b68f</rest_message><sys_class_name>sys_rest_message_headers</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-01-07 22:14:21</sys_created_on><sys_id>f2624c0e2f2120105042d6ab2799b61e</sys_id><sys_mod_count>1</sys_mod_count><sys_name>x-rapidapi-host</sys_name><sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package><sys_policy/><sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope><sys_update_name>sys_rest_message_headers_f2624c0e2f2120105042d6ab2799b61e</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-01-07 22:20:06</sys_updated_on><value>covid-19-data.p.rapidapi.com</value></sys_rest_message_headers></record_update>]]></payload>
+        <payload_hash>1554060515</payload_hash>
+        <record_name>x-rapidapi-host</record_name>
+        <reverted_from/>
+        <source>5aa04c8a2f2120105042d6ab2799b6f6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-07 22:20:06</sys_created_on>
+        <sys_id>e9f3448e2f2120105042d6ab2799b66b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>176deef808a0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-07 22:20:06</sys_updated_on>
+        <type>HTTP Headers</type>
+        <update_guid>25f3448e802120101aa37d9c7cd3756b</update_guid>
+        <update_guid_history>25f3448e802120101aa37d9c7cd3756b:1554060515,dda2c44e0021201084a42f504786a955:-1878413066</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-08 14:05:34</sys_created_on>
+        <sys_db_object display_value="" name="sys_rest_message_headers">sys_rest_message_headers</sys_db_object>
+        <sys_id>58ea64a43956473897c6470330c939a4</sys_id>
+        <sys_metadata>f2624c0e2f2120105042d6ab2799b61e</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x-rapidapi-host</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_parent display_value="COVID-19">7cf1cc0e2f2120105042d6ab2799b68f</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_scope_delete display_value="">01bdd0310e6149608055cb01382d20a9</sys_scope_delete>
+        <sys_update_name>sys_rest_message_headers_f2624c0e2f2120105042d6ab2799b61e</sys_update_name>
+        <sys_update_version display_value="sys_rest_message_headers_f2624c0e2f2120105042d6ab2799b61e">e9f3448e2f2120105042d6ab2799b66b</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-08 14:05:34</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
