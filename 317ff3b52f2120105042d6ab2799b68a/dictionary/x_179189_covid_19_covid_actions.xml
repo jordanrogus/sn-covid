@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" extends="task" label="COVID Actions" max_length="40" name="x_179189_covid_19_covid_actions" text_index="true" type="collection">
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Category" mandatory="true" max_length="40" name="u_category" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Inventory" sequence="0" value="inventory"/>
+                <element inactive_on_update="false" label="Process" sequence="1" value="process"/>
+                <element inactive_on_update="false" label="Personnel" sequence="2" value="personnel"/>
+            </choice>
+        </element>
+    </element>
+</database>

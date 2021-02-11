@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="DELETE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-11 14:14:40</sys_created_on>
+        <sys_id>4884ee4d07126010a112ff4c7c1ed020</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_179189_covid_19_covid_data_us.x_179189_covid_19.user</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_security_acl display_value="x_179189_covid_19_covid_data_us">8884ee4d07126010a112ff4c7c1ed01d</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_4884ee4d07126010a112ff4c7c1ed020</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-11 14:14:40</sys_updated_on>
+        <sys_user_role display_value="x_179189_covid_19.user" name="x_179189_covid_19.user">d78f7f352f2120105042d6ab2799b645</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</application>
+        <file_path/>
+        <instance_id>f181d25edb02fa400e785d00cf96191a</instance_id>
+        <instance_name>dev34661</instance_name>
+        <name>sys_security_acl_role_4884ee4d07126010a112ff4c7c1ed020</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-02-11 14:14:40</sys_created_on><sys_id>4884ee4d07126010a112ff4c7c1ed020</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_179189_covid_19_covid_data_us.x_179189_covid_19.user</sys_name><sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package><sys_policy/><sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope><sys_security_acl display_value="x_179189_covid_19_covid_data_us">8884ee4d07126010a112ff4c7c1ed01d</sys_security_acl><sys_update_name>sys_security_acl_role_4884ee4d07126010a112ff4c7c1ed020</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-02-11 14:14:40</sys_updated_on><sys_user_role display_value="x_179189_covid_19.user" name="x_179189_covid_19.user">d78f7f352f2120105042d6ab2799b645</sys_user_role><transaction_id/></sys_security_acl_role></record_update>]]></payload>
+        <payload_hash>-1362654779</payload_hash>
+        <record_name>x_179189_covid_19_covid_data_us.x_179189_covid_19.user</record_name>
+        <reverted_from/>
+        <source>f214620d07126010a112ff4c7c1ed074</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-11 14:14:40</sys_created_on>
+        <sys_id>c084ee4d07126010a112ff4c7c1ed023</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1779171a7130000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-11 14:14:40</sys_updated_on>
+        <type>Access Roles</type>
+        <update_guid>0c84ee4d461260106304e525c6522822</update_guid>
+        <update_guid_history>0c84ee4d461260106304e525c6522822:-1362654779</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="x_179189_covid_19_covid_data_us.x_179189_covid_19.user">2c75aacd07126010a112ff4c7c1ed0dd</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-11 14:18:48</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl_role">sys_security_acl_role</sys_db_object>
+        <sys_id>7fd755a950c848e2920283e188d806f1</sys_id>
+        <sys_metadata>4884ee4d07126010a112ff4c7c1ed020</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_179189_covid_19_covid_data_us.x_179189_covid_19.user</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_scope_delete display_value="">01bdd0310e6149608055cb01382d20a9</sys_scope_delete>
+        <sys_update_name>sys_security_acl_role_4884ee4d07126010a112ff4c7c1ed020</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_role_4884ee4d07126010a112ff4c7c1ed020">c084ee4d07126010a112ff4c7c1ed023</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-11 14:18:48</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

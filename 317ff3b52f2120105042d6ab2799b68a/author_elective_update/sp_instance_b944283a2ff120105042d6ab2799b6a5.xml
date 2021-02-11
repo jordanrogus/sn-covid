@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">3d44283a2ff120105042d6ab2799b6a3</sp_column>
+        <sp_widget display_value="SC Catalog Item">3c29786e87133200e0ef0cf888cb0bdf</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-22 18:52:26</sys_created_on>
+        <sys_id>b944283a2ff120105042d6ab2799b6a5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SC Catalog Item</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_update_name>sp_instance_b944283a2ff120105042d6ab2799b6a5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-22 18:52:26</sys_updated_on>
+        <title>SC Catalog Item</title>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"show_add_cart_button": {
+		"value": "true",
+		"displayValue": "true"
+	}
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=b944283a2ff120105042d6ab2799b6a5"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</application>
+        <file_path/>
+        <instance_id>eac3d649dbd17fc0b847ac44d4961944</instance_id>
+        <instance_name>dev85588</instance_name>
+        <name>sp_instance_b944283a2ff120105042d6ab2799b6a5</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_instance"&gt;&lt;sp_instance action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;class_name/&gt;&lt;color&gt;default&lt;/color&gt;&lt;css/&gt;&lt;glyph/&gt;&lt;id/&gt;&lt;order&gt;1&lt;/order&gt;&lt;roles/&gt;&lt;short_description/&gt;&lt;size&gt;md&lt;/size&gt;&lt;sp_column display_value="1"&gt;3d44283a2ff120105042d6ab2799b6a3&lt;/sp_column&gt;&lt;sp_widget display_value="SC Catalog Item"&gt;3c29786e87133200e0ef0cf888cb0bdf&lt;/sp_widget&gt;&lt;sys_class_name&gt;sp_instance&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2021-01-22 18:52:26&lt;/sys_created_on&gt;&lt;sys_id&gt;b944283a2ff120105042d6ab2799b6a5&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;SC Catalog Item&lt;/sys_name&gt;&lt;sys_package display_value="COVID-19" source="x_179189_covid_19"&gt;317ff3b52f2120105042d6ab2799b68a&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="COVID-19"&gt;317ff3b52f2120105042d6ab2799b68a&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_instance_b944283a2ff120105042d6ab2799b6a5&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2021-01-22 18:52:26&lt;/sys_updated_on&gt;&lt;title&gt;SC Catalog Item&lt;/title&gt;&lt;url/&gt;&lt;widget_parameters&gt;&lt;![CDATA[{
+	"show_add_cart_button": {
+		"value": "true",
+		"displayValue": "true"
+	}
+}]]&gt;&lt;/widget_parameters&gt;&lt;/sp_instance&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=b944283a2ff120105042d6ab2799b6a5"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1739444108</payload_hash>
+        <record_name>SC Catalog Item</record_name>
+        <reverted_from/>
+        <source>5aa04c8a2f2120105042d6ab2799b6f6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-22 18:52:26</sys_created_on>
+        <sys_id>f544283a2ff120105042d6ab2799b6a7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1772b70c4f30000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-22 18:52:26</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>3144283af2f12010bdede52c7d7518a7</update_guid>
+        <update_guid_history>3144283af2f12010bdede52c7d7518a7:1739444108</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">d845607a2ff120105042d6ab2799b620</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-22 18:56:43</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>0475b09f8e4947b29367fd2797e1da59</sys_id>
+        <sys_metadata>b944283a2ff120105042d6ab2799b6a5</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SC Catalog Item</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_scope_delete display_value="">01bdd0310e6149608055cb01382d20a9</sys_scope_delete>
+        <sys_update_name>sp_instance_b944283a2ff120105042d6ab2799b6a5</sys_update_name>
+        <sys_update_version display_value="sp_instance_b944283a2ff120105042d6ab2799b6a5">f544283a2ff120105042d6ab2799b6a7</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-22 18:56:43</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

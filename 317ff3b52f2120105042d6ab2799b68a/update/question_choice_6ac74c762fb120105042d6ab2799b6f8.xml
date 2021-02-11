@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
+    <question_choice action="INSERT_OR_UPDATE">
+        <inactive>false</inactive>
+        <misc>0</misc>
+        <order>5</order>
+        <published_ref/>
+        <question display_value="Priority">52c74c762fb120105042d6ab2799b6d3</question>
+        <rec_misc>0</rec_misc>
+        <sys_class_name>question_choice</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-22 16:47:58</sys_created_on>
+        <sys_id>6ac74c762fb120105042d6ab2799b6f8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>5 - Planning</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_update_name>question_choice_6ac74c762fb120105042d6ab2799b6f8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-22 16:47:58</sys_updated_on>
+        <text>5 - Planning</text>
+        <value>5</value>
+    </question_choice>
+    <fx_price action="delete_multiple" query="id=6ac74c762fb120105042d6ab2799b6f8"/>
+    <fx_price action="INSERT_OR_UPDATE">
+        <amount>0</amount>
+        <currency display_value="USD">USD</currency>
+        <field>misc</field>
+        <id>6ac74c762fb120105042d6ab2799b6f8</id>
+        <parent/>
+        <reference_amount>0</reference_amount>
+        <reference_currency display_value="USD">USD</reference_currency>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-22 16:47:58</sys_created_on>
+        <sys_id>eac74c762fb120105042d6ab2799b6f9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-22 16:47:58</sys_updated_on>
+        <table>question_choice</table>
+        <type>calculated</type>
+    </fx_price>
+    <fx_price action="INSERT_OR_UPDATE">
+        <amount>0</amount>
+        <currency display_value="USD">USD</currency>
+        <field>rec_misc</field>
+        <id>6ac74c762fb120105042d6ab2799b6f8</id>
+        <parent/>
+        <reference_amount>0</reference_amount>
+        <reference_currency display_value="USD">USD</reference_currency>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-22 16:47:58</sys_created_on>
+        <sys_id>a2c74c762fb120105042d6ab2799b6f9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-22 16:47:58</sys_updated_on>
+        <table>question_choice</table>
+        <type>calculated</type>
+    </fx_price>
+</record_update>

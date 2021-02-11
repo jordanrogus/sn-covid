@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="Data" section_id="a39280db2fe120105042d6ab2799b6aa" sys_domain="global" table="x_179189_covid_19_covid_data_us" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_death_confirmed</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-01-11 19:35:53</sys_created_on>
+            <sys_id>7eb4485f2fe120105042d6ab2799b640</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Data" display_value="Data" name="x_179189_covid_19_covid_data_us" sys_domain="global" view="Default view">a39280db2fe120105042d6ab2799b6aa</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-01-11 19:35:53</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_hospitalized_cumulative</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-01-11 19:35:53</sys_created_on>
+            <sys_id>feb4485f2fe120105042d6ab2799b640</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Data" display_value="Data" name="x_179189_covid_19_covid_data_us" sys_domain="global" view="Default view">a39280db2fe120105042d6ab2799b6aa</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-01-11 19:35:53</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_hospitalized_increase</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-01-11 19:35:53</sys_created_on>
+            <sys_id>72b4485f2fe120105042d6ab2799b641</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Data" display_value="Data" name="x_179189_covid_19_covid_data_us" sys_domain="global" view="Default view">a39280db2fe120105042d6ab2799b6aa</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-01-11 19:35:53</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_negative_cumulative</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-01-11 19:35:53</sys_created_on>
+            <sys_id>f2b4485f2fe120105042d6ab2799b641</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Data" display_value="Data" name="x_179189_covid_19_covid_data_us" sys_domain="global" view="Default view">a39280db2fe120105042d6ab2799b6aa</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-01-11 19:35:53</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_positive_increase</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-01-11 19:35:53</sys_created_on>
+            <sys_id>76b4485f2fe120105042d6ab2799b641</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Data" display_value="Data" name="x_179189_covid_19_covid_data_us" sys_domain="global" view="Default view">a39280db2fe120105042d6ab2799b6aa</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-01-11 19:35:53</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-01-11 19:35:53</sys_created_on>
+            <sys_id>f6b4485f2fe120105042d6ab2799b641</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Data" display_value="Data" name="x_179189_covid_19_covid_data_us" sys_domain="global" view="Default view">a39280db2fe120105042d6ab2799b6aa</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-01-11 19:35:53</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_death_increase</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-01-11 19:35:53</sys_created_on>
+            <sys_id>7ab4485f2fe120105042d6ab2799b641</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Data" display_value="Data" name="x_179189_covid_19_covid_data_us" sys_domain="global" view="Default view">a39280db2fe120105042d6ab2799b6aa</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-01-11 19:35:53</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_hospitalized_currently</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-01-11 19:35:53</sys_created_on>
+            <sys_id>fab4485f2fe120105042d6ab2799b641</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Data" display_value="Data" name="x_179189_covid_19_covid_data_us" sys_domain="global" view="Default view">a39280db2fe120105042d6ab2799b6aa</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-01-11 19:35:53</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_negative_increase</element>
+            <position>8</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-01-11 19:35:53</sys_created_on>
+            <sys_id>7eb4485f2fe120105042d6ab2799b641</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Data" display_value="Data" name="x_179189_covid_19_covid_data_us" sys_domain="global" view="Default view">a39280db2fe120105042d6ab2799b6aa</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-01-11 19:35:53</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_positive_cumulative</element>
+            <position>9</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-01-11 19:35:53</sys_created_on>
+            <sys_id>feb4485f2fe120105042d6ab2799b641</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Data" display_value="Data" name="x_179189_covid_19_covid_data_us" sys_domain="global" view="Default view">a39280db2fe120105042d6ab2799b6aa</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-01-11 19:35:53</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_total_tests_performed</element>
+            <position>10</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-01-11 19:35:53</sys_created_on>
+            <sys_id>72b4485f2fe120105042d6ab2799b642</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Data" display_value="Data" name="x_179189_covid_19_covid_data_us" sys_domain="global" view="Default view">a39280db2fe120105042d6ab2799b6aa</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-01-11 19:35:53</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_total_test_increase</element>
+            <position>11</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-01-11 19:35:53</sys_created_on>
+            <sys_id>f2b4485f2fe120105042d6ab2799b642</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Data" display_value="Data" name="x_179189_covid_19_covid_data_us" sys_domain="global" view="Default view">a39280db2fe120105042d6ab2799b6aa</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-01-11 19:35:53</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>Data</caption>
+            <header>false</header>
+            <name>x_179189_covid_19_covid_data_us</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-01-11 19:26:38</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a39280db2fe120105042d6ab2799b6aa</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_179189_covid_19_covid_data_us</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+            <sys_update_name>sys_ui_section_a39280db2fe120105042d6ab2799b6aa</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-01-11 19:26:38</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

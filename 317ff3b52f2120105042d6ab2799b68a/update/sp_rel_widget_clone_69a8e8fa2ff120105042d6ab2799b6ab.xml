@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_rel_widget_clone">
+    <sp_rel_widget_clone action="INSERT_OR_UPDATE">
+        <child display_value="COVID Breadcrumbs">e1a8e8fa2ff120105042d6ab2799b6a9</child>
+        <cloned>2021-01-22 19:11:32</cloned>
+        <last_validated>2021-01-22 19:11:32</last_validated>
+        <parent display_value="breadcrumbs">0fb269305b3212000d7ec7ad31f91ae2</parent>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;sp_widget&gt;&lt;category&gt;standard&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[function($scope, $rootScope, spUtil) {
+	var c = this;
+	c.expanded = !spUtil.isMobile();
+	c.expand = function() {
+		c.expanded = true;
+	};
+
+	var deregister = $rootScope.$on("sp.update.breadcrumbs", function(e, list) {
+		c.breadcrumbs = list;
+	});
+
+	$scope.$on('$destroy', function(){
+		deregister();
+	});
+
+}]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;.nav {
+  li {
+    padding: 10px 7px;
+
+    &amp;gt; span {
+      &amp;gt; a {
+          display: inline;
+      }
+
+      &amp;gt; i {
+          padding-left: 15px;
+      }
+    }
+  }
+  &amp;amp;::before, &amp;amp;::after {
+    content: none;
+  }
+}
+
+.a-disabled {
+  cursor: default;
+  color: $sp-disabled-breadcrumb;
+}&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;false&lt;/has_preview&gt;&lt;id&gt;breadcrumbs&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link/&gt;&lt;name&gt;breadcrumbs&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles&gt;snc_external,snc_internal&lt;/roles&gt;&lt;script/&gt;&lt;servicenow&gt;true&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2016-04-12 21:39:53&lt;/sys_created_on&gt;&lt;sys_id&gt;0fb269305b3212000d7ec7ad31f91ae2&lt;/sys_id&gt;&lt;sys_mod_count&gt;42&lt;/sys_mod_count&gt;&lt;sys_name&gt;breadcrumbs&lt;/sys_name&gt;&lt;sys_package display_value="Service Portal - Core" source="com.glide.service-portal"&gt;5e67bfc4c967101091f9f0646483279d&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_0fb269305b3212000d7ec7ad31f91ae2&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-21 10:47:10&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div aria-label="${Page breadcrumbs}" role="navigation"&gt;
+&lt;ul class="nav nav-pills nav-sm"&gt;
+  &lt;li&gt;
+    &lt;span&gt;&lt;a ng-href="?id={{portal.homepage_dv}}"&gt;${Home}&lt;/a&gt;
+      &lt;i aria-hidden="true" class="fa fa-chevron-right"&gt;&lt;/i&gt;&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li ng-if="!c.expanded &amp;amp;&amp;amp; c.breadcrumbs &amp;amp;&amp;amp; c.breadcrumbs.length &gt; 2"&gt;
+    &lt;span&gt;&lt;a ng-click="c.expand()"&gt;&lt;i class="fa fa-ellipsis-h" aria-hidden="true"&gt;&lt;/i&gt;&lt;/a&gt;
+      &lt;i aria-hidden="true" class="fa fa-chevron-right"&gt;&lt;/i&gt;&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li ng-if="!c.breadcrumbs"&gt;&lt;span&gt;&lt;a style="display: inline;" class="a-disabled" aria-current="page" href&gt;{{page.title}}&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li ng-if="c.expanded || ((c.breadcrumbs.length &gt; 2  &amp;amp;&amp;amp; $index &gt; c.breadcrumbs.length-3) || (c.breadcrumbs.length &lt;= 2))" ng-repeat="item in c.breadcrumbs track by $index" &gt;
+    &lt;span&gt;&lt;a ng-if="!$last" ng-href="{{item.url}}"&gt;{{item.label}}&lt;/a&gt;
+      &lt;a class="a-disabled" ng-if="$last" aria-current="page" href&gt;{{item.label}}&lt;/a&gt;
+      &lt;i aria-hidden="true" ng-if="!$last" class="fa fa-chevron-right"&gt;&lt;/i&gt;&lt;/span&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;</payload>
+        <sys_class_name>sp_rel_widget_clone</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-22 19:11:32</sys_created_on>
+        <sys_id>69a8e8fa2ff120105042d6ab2799b6ab</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>e1a8e8fa2ff120105042d6ab2799b6a9</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_update_name>sp_rel_widget_clone_69a8e8fa2ff120105042d6ab2799b6ab</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-22 19:11:32</sys_updated_on>
+    </sp_rel_widget_clone>
+</record_update>

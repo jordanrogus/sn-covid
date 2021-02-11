@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency">
+    <m2m_sp_widget_dependency action="DELETE">
+        <sp_dependency display_value="dialog-polyfill">2eaf31f30b301200b0b02c6317673a84</sp_dependency>
+        <sp_widget display_value="Copy of SC Catalog Item Deprecated">daf417eb2f3120105042d6ab2799b659</sp_widget>
+        <sys_class_name>m2m_sp_widget_dependency</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-25 15:39:53</sys_created_on>
+        <sys_id>daf417eb2f3120105042d6ab2799b65f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>dialog-polyfill.Copy of SC Catalog Item Deprecated</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_update_name>m2m_sp_widget_dependency_daf417eb2f3120105042d6ab2799b65f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-25 15:39:53</sys_updated_on>
+    </m2m_sp_widget_dependency>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</application>
+        <file_path/>
+        <instance_id>eac3d649dbd17fc0b847ac44d4961944</instance_id>
+        <instance_name>dev85588</instance_name>
+        <name>m2m_sp_widget_dependency_daf417eb2f3120105042d6ab2799b65f</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency"><m2m_sp_widget_dependency action="INSERT_OR_UPDATE"><sp_dependency display_value="dialog-polyfill">2eaf31f30b301200b0b02c6317673a84</sp_dependency><sp_widget display_value="Copy of SC Catalog Item Deprecated">daf417eb2f3120105042d6ab2799b659</sp_widget><sys_class_name>m2m_sp_widget_dependency</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-01-25 15:39:53</sys_created_on><sys_id>daf417eb2f3120105042d6ab2799b65f</sys_id><sys_mod_count>0</sys_mod_count><sys_name>dialog-polyfill.Copy of SC Catalog Item Deprecated</sys_name><sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package><sys_policy/><sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope><sys_update_name>m2m_sp_widget_dependency_daf417eb2f3120105042d6ab2799b65f</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-01-25 15:39:53</sys_updated_on></m2m_sp_widget_dependency></record_update>]]></payload>
+        <payload_hash>-1628080684</payload_hash>
+        <record_name>dialog-polyfill.Copy of SC Catalog Item Deprecated</record_name>
+        <reverted_from/>
+        <source>5aa04c8a2f2120105042d6ab2799b6f6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-25 15:39:53</sys_created_on>
+        <sys_id>9af417eb2f3120105042d6ab2799b661</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1773a338d810000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-25 15:39:53</sys_updated_on>
+        <type>Widget Dependency</type>
+        <update_guid>d2f417eb773120107009e0a1c48f2461</update_guid>
+        <update_guid_history>d2f417eb773120107009e0a1c48f2461:-1628080684</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">f91997af2f3120105042d6ab2799b65a</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-25 15:57:51</sys_created_on>
+        <sys_db_object display_value="" name="m2m_sp_widget_dependency">m2m_sp_widget_dependency</sys_db_object>
+        <sys_id>77ae182143984c7caa07d8d9abfc4204</sys_id>
+        <sys_metadata>daf417eb2f3120105042d6ab2799b65f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>dialog-polyfill.Copy of SC Catalog Item Deprecated</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_scope_delete display_value="">01bdd0310e6149608055cb01382d20a9</sys_scope_delete>
+        <sys_update_name>m2m_sp_widget_dependency_daf417eb2f3120105042d6ab2799b65f</sys_update_name>
+        <sys_update_version display_value="m2m_sp_widget_dependency_daf417eb2f3120105042d6ab2799b65f">9af417eb2f3120105042d6ab2799b661</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-25 15:57:51</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

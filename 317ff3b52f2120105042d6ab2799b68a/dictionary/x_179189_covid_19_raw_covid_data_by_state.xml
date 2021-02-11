@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="sys_import_set_row" label="raw_covid_data_by_state" max_length="40" name="x_179189_covid_19_raw_covid_data_by_state" type="collection">
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=dataQualityGrade" label="dataQualityGrade" max_length="40" name="u_dataqualitygrade" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=date" label="date" max_length="40" name="u_date" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=death" label="death" max_length="40" name="u_death" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=deathConfirmed" label="deathConfirmed" max_length="40" name="u_deathconfirmed" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=deathIncrease" label="deathIncrease" max_length="40" name="u_deathincrease" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=deathProbable" label="deathProbable" max_length="40" name="u_deathprobable" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=hospitalized" label="hospitalized" max_length="40" name="u_hospitalized" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=hospitalizedCumulative" label="hospitalizedCumulative" max_length="40" name="u_hospitalizedcumulative" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=hospitalizedCurrently" label="hospitalizedCurrently" max_length="40" name="u_hospitalizedcurrently" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=hospitalizedIncrease" label="hospitalizedIncrease" max_length="40" name="u_hospitalizedincrease" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=inIcuCumulative" label="inIcuCumulative" max_length="40" name="u_inicucumulative" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=inIcuCurrently" label="inIcuCurrently" max_length="40" name="u_inicucurrently" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=negative" label="negative" max_length="40" name="u_negative" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=negativeIncrease" label="negativeIncrease" max_length="40" name="u_negativeincrease" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=negativeTestsAntibody" label="negativeTestsAntibody" max_length="40" name="u_negativetestsantibody" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=negativeTestsPeopleAntibody" label="negativeTestsPeopleAntibody" max_length="40" name="u_negativetestspeopleantibody" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=negativeTestsViral" label="negativeTestsViral" max_length="40" name="u_negativetestsviral" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=onVentilatorCumulative" label="onVentilatorCumulative" max_length="40" name="u_onventilatorcumulative" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=onVentilatorCurrently" label="onVentilatorCurrently" max_length="40" name="u_onventilatorcurrently" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=positive" label="positive" max_length="40" name="u_positive" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=positiveCasesViral" label="positiveCasesViral" max_length="40" name="u_positivecasesviral" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=positiveIncrease" label="positiveIncrease" max_length="40" name="u_positiveincrease" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=positiveScore" label="positiveScore" max_length="40" name="u_positivescore" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=positiveTestsAntibody" label="positiveTestsAntibody" max_length="40" name="u_positivetestsantibody" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=positiveTestsAntigen" label="positiveTestsAntigen" max_length="40" name="u_positivetestsantigen" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=positiveTestsPeopleAntibody" label="positiveTestsPeopleAntibody" max_length="40" name="u_positivetestspeopleantibody" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=positiveTestsPeopleAntigen" label="positiveTestsPeopleAntigen" max_length="40" name="u_positivetestspeopleantigen" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=positiveTestsViral" label="positiveTestsViral" max_length="40" name="u_positivetestsviral" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=recovered" label="recovered" max_length="40" name="u_recovered" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=state" label="state" max_length="40" name="u_state" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=totalTestEncountersViral" label="totalTestEncountersViral" max_length="40" name="u_totaltestencountersviral" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=totalTestEncountersViralIncrease" label="totalTestEncountersViralIncrease" max_length="40" name="u_totaltestenc_sviralincrease" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=totalTestResults" label="totalTestResults" max_length="40" name="u_totaltestresults" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=totalTestResultsIncrease" label="totalTestResultsIncrease" max_length="40" name="u_totaltestresultsincrease" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=totalTestsAntibody" label="totalTestsAntibody" max_length="40" name="u_totaltestsantibody" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=totalTestsAntigen" label="totalTestsAntigen" max_length="40" name="u_totaltestsantigen" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=totalTestsPeopleAntibody" label="totalTestsPeopleAntibody" max_length="40" name="u_totaltestspeopleantibody" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=totalTestsPeopleAntigen" label="totalTestsPeopleAntigen" max_length="40" name="u_totaltestspeopleantigen" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=totalTestsPeopleViral" label="totalTestsPeopleViral" max_length="40" name="u_totaltestspeopleviral" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=totalTestsPeopleViralIncrease" label="totalTestsPeopleViralIncrease" max_length="40" name="u_totaltestspe_eviralincrease" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=totalTestsViral" label="totalTestsViral" max_length="40" name="u_totaltestsviral" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=totalTestsViralIncrease" label="totalTestsViralIncrease" max_length="40" name="u_totaltestsviralincrease" type="string"/>
+    </element>
+</database>

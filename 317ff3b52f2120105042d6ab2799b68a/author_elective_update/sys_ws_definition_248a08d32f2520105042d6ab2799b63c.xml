@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_definition">
+    <sys_ws_definition action="DELETE">
+        <active>true</active>
+        <base_uri>/api/x_179189_covid_19/covid_19</base_uri>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_version>No active default version</default_version>
+        <doc_link/>
+        <enforce_acl>cf9d01d3e73003009d6247e603f6a990</enforce_acl>
+        <is_versioned>false</is_versioned>
+        <name>COVID-19</name>
+        <namespace>x_179189_covid_19</namespace>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <service_id>covid_19</service_id>
+        <short_description/>
+        <sys_class_name>sys_ws_definition</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-11 20:01:16</sys_created_on>
+        <sys_id>248a08d32f2520105042d6ab2799b63c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>COVID-19</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_update_name>sys_ws_definition_248a08d32f2520105042d6ab2799b63c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-11 20:01:16</sys_updated_on>
+    </sys_ws_definition>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</application>
+        <file_path/>
+        <instance_id>eac3d649dbd17fc0b847ac44d4961944</instance_id>
+        <instance_name>dev85588</instance_name>
+        <name>sys_ws_definition_248a08d32f2520105042d6ab2799b63c</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_definition"><sys_ws_definition action="INSERT_OR_UPDATE"><active>true</active><base_uri>/api/x_179189_covid_19/covid_19</base_uri><consumes>application/json,application/xml,text/xml</consumes><consumes_customized>false</consumes_customized><default_version>No active default version</default_version><doc_link/><enforce_acl>cf9d01d3e73003009d6247e603f6a990</enforce_acl><is_versioned>false</is_versioned><name>COVID-19</name><namespace>x_179189_covid_19</namespace><produces>application/json,application/xml,text/xml</produces><produces_customized>false</produces_customized><service_id>covid_19</service_id><short_description/><sys_class_name>sys_ws_definition</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-01-11 20:01:16</sys_created_on><sys_id>248a08d32f2520105042d6ab2799b63c</sys_id><sys_mod_count>0</sys_mod_count><sys_name>COVID-19</sys_name><sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package><sys_policy/><sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope><sys_update_name>sys_ws_definition_248a08d32f2520105042d6ab2799b63c</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-01-11 20:01:16</sys_updated_on></sys_ws_definition></record_update>]]></payload>
+        <payload_hash>-398320801</payload_hash>
+        <record_name>COVID-19</record_name>
+        <reverted_from/>
+        <source>5aa04c8a2f2120105042d6ab2799b6f6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-11 20:01:16</sys_created_on>
+        <sys_id>fa8a44d32f2520105042d6ab2799b6f7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>176f309d62b0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-11 20:01:16</sys_updated_on>
+        <type>Scripted REST API</type>
+        <update_guid>368a44d33325201000679bf491c026f7</update_guid>
+        <update_guid_history>368a44d33325201000679bf491c026f7:-398320801</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-11 20:06:49</sys_created_on>
+        <sys_db_object display_value="" name="sys_ws_definition">sys_ws_definition</sys_db_object>
+        <sys_id>b2e9d7a743e2477a8932aecb5bc9bd64</sys_id>
+        <sys_metadata>248a08d32f2520105042d6ab2799b63c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>COVID-19</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_scope_delete display_value="">01bdd0310e6149608055cb01382d20a9</sys_scope_delete>
+        <sys_update_name>sys_ws_definition_248a08d32f2520105042d6ab2799b63c</sys_update_name>
+        <sys_update_version display_value="sys_ws_definition_248a08d32f2520105042d6ab2799b63c">fa8a44d32f2520105042d6ab2799b6f7</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-11 20:06:49</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

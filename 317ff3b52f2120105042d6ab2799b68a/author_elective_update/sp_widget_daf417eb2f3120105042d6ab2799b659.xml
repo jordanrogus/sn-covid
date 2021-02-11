@@ -1,0 +1,871 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>sc</category>
+        <client_script><![CDATA[function ($scope, $http, spUtil, nowAttachmentHandler, $rootScope, $sanitize, $window, $sce, i18n, $timeout, $log, spAriaUtil, $location, spModal) {
+	var c = this;
+	c.quantity = 1;
+	if ($scope.data.sc_cat_item)
+		$scope.data.sc_cat_item.description = $sce.trustAsHtml($scope.data.sc_cat_item.description);
+	c.widget._debugContextMenu = [
+		[ i18n.getMessage("Open") + " sc_cat_item", function(){
+			var item = c.data.sc_cat_item;
+			$window.open("/sp_config?id=form&table=" + item.table + "&sys_id=" + item.sys_id); }]
+	];
+	c.showAddCartBtn = function() {
+		return c.options.show_add_cart_button &&
+			c.data.sc_cat_item.sys_class_name !== "sc_cat_item_producer" &&
+			!c.data.sc_cat_item.no_cart;
+	}
+
+	c.showQuantitySelector = function() {
+		return c.data.sc_cat_item.sys_class_name !== "sc_cat_item_producer" &&
+			!c.data.sc_cat_item.no_quantity &&
+			(!c.data.sc_cat_item.no_order_now || !c.data.sc_cat_item.no_cart);
+	}
+
+	c.showOrderNowButton = function() {
+		return c.data.sc_cat_item.use_sc_layout || !c.data.sc_cat_item.no_order_now;
+	}
+
+	c.allowOrder = function() {
+		if (c.data.sc_cat_item.use_sc_layout)
+			return true;
+
+		if (c.data.sc_cat_item.no_order)
+			return false;
+
+		if (c.data.sc_cat_item.no_order_now && c.data.sc_cat_item.no_cart)
+			return false;
+
+		return true;
+	}
+
+	$scope.$on('dialog.upload_too_large.show', function(e){
+		$log.error($scope.m.largeAttachmentMsg);
+		spUtil.addErrorMessage($scope.m.largeAttachmentMsg);
+	});
+
+	$scope.m = $scope.data.msgs;
+	$scope.submitButtonMsg = $scope.m.submitMsg;
+	var ah = $scope.attachmentHandler = new nowAttachmentHandler(setAttachments, appendError);
+	function appendError(error) {
+		spUtil.addErrorMessage(error.msg + error.fileName);
+	}
+	ah.setParams('sp_portal', $scope.data._attachmentGUID, 1024 * 1024 * $scope.data.maxAttachmentSize);
+	function setAttachments(attachments, action) {
+		$scope.attachments = attachments;
+		if (action === "added")
+			$scope.setFocusToAttachment();
+		if (action === "renamed")
+			spAriaUtil.sendLiveMessage($scope.m.renameSuccessMsg);
+		if (action === "deleted")
+			spAriaUtil.sendLiveMessage($scope.m.deleteSuccessMsg);
+	}
+	$scope.attachmentHandler.getAttachmentList();
+
+	$scope.confirmDeleteAttachment = function(attachment) {
+		spModal.confirm($scope.data.msgs.delete_attachment).then(function() {
+          $scope.attachmentHandler.deleteAttachment(attachment);
+          $scope.setFocusToAttachmentButton();
+		});
+  }
+
+	// Breadcrumbs
+	if ($scope.data.sc_cat_item) {
+		if (!$scope.data.categories)
+			$scope.data.categories = [];
+		$scope.data.categories.unshift({label: $scope.data.msgs.serviceCatalogMsg, url: '?id=' + $scope.data.sc_catalog_page});
+		$scope.data.categories.push({label: $scope.data.sc_cat_item.name, url: '#'});
+		$timeout(function() {
+			$scope.$emit('sp.update.breadcrumbs', $scope.data.categories);
+		});
+		spUtil.setSearchPage('sc');
+	} else {
+		var notFoundBC = [{label: $scope.data.msgs.serviceCatalogMsg, url: '?id=' + $scope.data.sc_catalog_page}];
+		$timeout(function() {
+			$scope.$emit('sp.update.breadcrumbs', notFoundBC);
+		});
+		spUtil.setSearchPage('sc');
+	}
+
+	c.getItemId = function () {
+		return $scope.data.sc_cat_item ? $scope.data.sc_cat_item.sys_id : -1;
+	};
+
+	var g_form;
+	$scope.$on('spModel.gForm.initialized', function(e, gFormInstance){
+		if (gFormInstance.getSysId() != -1 && gFormInstance.getSysId() != c.getItemId())
+			return;
+		g_form = gFormInstance;
+
+		// This runs after all onSubmit scripts have executed
+		g_form.$private.events.on('submitted', function(){
+			if ($scope.data.sc_cat_item.item_action === "order")
+				getOne();
+			else if ($scope.data.sc_cat_item.item_action === "add_to_cart")
+				addToCart();
+		});
+	});
+
+	$scope.triggerAddToCart = function() {
+		$scope.data.sc_cat_item.item_action = "add_to_cart";
+		$scope.data.sc_cat_item.quantity = c.quantity;
+		if (g_form)
+			g_form.submit();
+	}
+
+	$scope.triggerOnSubmit = function(){
+		$scope.data.sc_cat_item.item_action = "order";
+		$scope.data.sc_cat_item.quantity = c.quantity;
+		if (g_form)
+			g_form.submit();
+	}
+
+	// order / create request
+	function getOne() {
+		postCatalogFormRequest().success(function(response) {
+			var a = response.result ? response.result : response.answer;
+			var n = a.number;
+			$scope.$emit("$$uiNotification", response.$$uiNotification ? response.$$uiNotification : a.$$uiNotification);
+			$scope.$emit("$sp.sc_cat_item.submitted", a);
+			if (n)
+				issueMessage(n, a.table, a.sys_id, a.redirect_to, a.redirect_portal_url);
+			$scope.submitting = false;
+			$scope.submitButtonMsg = $scope.m.submittedMsg;
+		}).error(function(response) {
+			console.log(response);
+		});
+	}
+
+	function addToCart() {
+		postCatalogFormRequest().success(function(response) {
+			$rootScope.$broadcast("$sp.service_catalog.cart.add_item");
+			$rootScope.$broadcast("$sp.service_catalog.cart.update");
+			//spUtil.addInfoMessage("Added item to shopping cart");
+			$scope.submitting = false;
+			c.status = "Added item to shopping cart";
+		});
+	}
+
+	function postCatalogFormRequest() {
+		setFieldsReadonly();
+		$scope.submitted = true;
+		$scope.submitting = true;
+		var requestUrl;
+		var reqData = {};
+ 		if ($scope.data.sc_cat_item.sys_class_name === "sc_cat_item_producer") {
+			requestUrl = '/api/sn_sc/v1/servicecatalog/items/' + $scope.data.sc_cat_item.sys_id + '/submit_producer';
+			for(var obj in $scope.data.sc_cat_item._fields)
+				reqData[$scope.data.sc_cat_item._fields[obj].name] = $scope.data.sc_cat_item._fields[obj].value;
+			reqData = {'variables' : reqData, 'attachment_id' : $scope.data._attachmentGUID, 'attachment_table': 'sp_portal', 'get_portal_messages': 'true'};
+		}
+		else {
+			requestUrl = spUtil.getURL('sc_cat_item');
+			reqData = $scope.data.sc_cat_item;
+			reqData._attachmentGUID = $scope.data._attachmentGUID;
+		}
+		return $http.post(requestUrl, reqData);
+	}
+
+	// spModel populates mandatory - hasMandatory is called by the submit button
+	$scope.hasMandatory = function(mandatory) {
+		return mandatory && mandatory.length > 0;
+	};
+
+	// switch catalog items
+	var unregister = $scope.$on('$sp.list.click', onListClick);
+	$scope.$on("$destroy", function() {
+		unregister();
+	});
+
+	function onListClick(evt, arg) {
+		$scope.data.sys_id = arg.sys_id;
+		spUtil.update($scope);
+	}
+
+	function setFieldsReadonly(){
+		var allFields = g_form.getFieldNames();
+		for(var fieldName in allFields){
+			g_form.setReadOnly(allFields[fieldName], true);
+		}
+	}
+
+	function issueMessage(n, table, sys_id, redirectTo, redirectUrl) {
+		var page = table == 'sc_request' ? 'sc_request' : 'ticket';
+		if (c.options.page) {page = c.options.page;}
+		if (c.options.table) {table = c.options.table;}
+		if (redirectTo == 'catalog_home') page = 'sc_home';
+		var url = spUtil.format(c.options.url, {page: page, table: table, sys_id: sys_id});
+		if (c.options.auto_redirect == "true") {
+			$timeout(function() {
+				if (redirectUrl)
+					$location.url(redirectUrl);
+				else
+					$location.url(url);
+			}, 1000);
+			return;
+		}
+
+		var t = $scope.m.createdMsg + " " + n + " - ";
+		t += $scope.m.trackMsg;
+		t += ' <a href="' + url + '">' + $scope.m.clickMsg + '</a>';
+		spUtil.addInfoMessage(t);
+	}
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.panel-button {
+  float: none;
+}
+
+.sp-attachment-add {
+  padding: 5px;
+}
+
+.p-t-none {
+  padding-top: 0 !important;
+}
+
+.file-list-wrap {
+	margin-bottom: 10px;
+}
+
+.quantity-selector {
+  display: inline-block;
+  width: 65px;
+  padding-top: 2px;
+}
+
+.sp-sc-single-checkbox&gt;div {
+  display : inline !important;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list>color</field_list>
+        <has_preview>false</has_preview>
+        <id>covid-sc-cat-item</id>
+        <internal>false</internal>
+        <link><![CDATA[function(scope, elem){
+    scope.setFocusToAttachment = function () {
+		setTimeout(function () {
+			var inboxArray = elem.find("a.view-attachment");
+			inboxArray.focus();
+		}, 100);
+	}
+	scope.setFocusToAttachmentButton = function () {
+		elem.find('.sp-attachment-add')[0].focus();
+	}
+}
+	]]></link>
+        <name>SC Catalog Item</name>
+        <option_schema>[{"name":"show_add_cart_button","label":"Show Add Cart Button","type":"boolean"},{"hint":"Define a URL Format for successful order page","name":"url","label":"Custom URL Format","type":"string"},{"displayValue":"Page","name":"page","label":"Successful Order Page","type":"reference","value":"sp_page","ed":{"reference":"sp_page"}},{"displayValue":"Table","name":"table","label":"Successful Order Table","type":"reference","value":"sys_db_object","ed":{"reference":"sys_db_object"}},{"hint":"Enable auto-redirection after ordering an item","name":"auto_redirect","label":"Auto Redirect on Successful Order","type":"boolean"}]</option_schema>
+        <public>false</public>
+        <roles>snc_external,snc_internal</roles>
+        <script><![CDATA[// populate the 'data' variable with catalog item, variables, and variable view
+(function() {
+	// portal can specify a catalog and catalog category home page
+	data.sc_catalog_page = $sp.getDisplayValue("sc_catalog_page") || "sc_home";
+	data.sc_category_page = $sp.getDisplayValue("sc_category_page") || "sc_category";
+
+	options.show_add_cart_button = (options.show_add_cart_button == "true");
+
+	if (options.page) {
+		var pageGR = new GlideRecord("sp_page");
+		options.page = (pageGR.get(options.page)) ? pageGR.getValue("id") : null;
+	}
+
+	if (options.table) {
+		var tableGR = new GlideRecord("sys_db_object");
+		options.table = (tableGR.get(options.table)) ? tableGR.getValue("name") : null;
+	}
+
+	options.url = options.url || "?id={page}&table={table}&sys_id={sys_id}";
+	data.showPrices = $sp.showCatalogPrices();
+	var m = data.msgs = {};
+	m.serviceCatalogMsg = gs.getMessage("Service Catalog");
+	m.submitMsg = gs.getMessage("Submit");
+	m.submittedMsg = gs.getMessage("Submitted");
+	m.createdMsg = gs.getMessage("Created");
+	m.trackMsg = gs.getMessage("track using 'Requests' in the header or");
+	m.clickMsg = gs.getMessage("click here to view");
+	m.dialogTitle = gs.getMessage("Delete Attachment");
+	m.dialogMessage = gs.getMessage("Are you sure?");
+	m.dialogOK = gs.getMessage("OK");
+	m.dialogCancel = gs.getMessage("Cancel");
+	data.maxAttachmentSize = parseInt(gs.getProperty("com.glide.attachment.max_size", 1024));
+	if (isNaN(data.maxAttachmentSize))
+		data.maxAttachmentSize = 24;
+	m.largeAttachmentMsg = gs.getMessage("Attached files must be smaller than {0} MB - please try again", "" + data.maxAttachmentSize);
+	m.renameSuccessMsg = gs.getMessage("Attachment renamed successfully");
+	m.deleteSuccessMsg = gs.getMessage("Attachment deleted successfully");
+
+	if (input)
+		data.sys_id = input.sys_id;
+	else if (options.sys_id)
+		data.sys_id = options.sys_id;
+	else
+		data.sys_id = $sp.getParameter("sys_id") || $sp.getParameter('sl_sys_id');
+
+	if (!data.sys_id)
+		return;
+
+	data._attachmentGUID = gs.generateGUID();
+	var validatedItem = new sn_sc.CatItem('' + data.sys_id);
+	if (!validatedItem.canView() || !validatedItem.isVisibleServicePortal())
+		return;
+
+	data.sc_cat_item = $sp.getCatalogItem({
+		sys_id: data.sys_id + '',
+		is_ordering: true
+	});
+	if (data.sc_cat_item.category) {
+		var categoryJS = new sn_sc.CatCategory(data.sc_cat_item.category);
+		data.category = {
+			name: categoryJS.getTitle(),
+			url: '?id='+data.sc_category_page+'&sys_id=' + data.sc_cat_item.category
+		};
+		data.categories = [];
+		data.categories.push({
+			label: categoryJS.getTitle(),
+			url: '?id='+data.sc_category_page+'&sys_id=' + data.sc_cat_item.category
+		});
+		while(categoryJS && categoryJS.getParent()) {
+			var parentId =  categoryJS.getParent();
+			categoryJS = new sn_sc.CatCategory(parentId);
+			var category = {
+				label: categoryJS.getTitle(),
+				url: '?id='+data.sc_category_page+'&sys_id=' + parentId
+			};
+			data.categories.unshift(category);
+		}
+	}
+
+	$sp.logStat('Catalog View', data.sc_cat_item.sys_class_name, data.sys_id, data.sc_cat_item.name);
+	data.msgs.delete_attachment = gs.getMessage("Delete Attachment?");
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-25 15:39:52</sys_created_on>
+        <sys_id>daf417eb2f3120105042d6ab2799b659</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>SC Catalog Item</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_update_name>sp_widget_daf417eb2f3120105042d6ab2799b659</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-25 15:40:08</sys_updated_on>
+        <template><![CDATA[<div id="sc_cat_item" >
+  <div class="row" ng-if="::data.sc_cat_item" >
+    <div ng-if="::data.sc_cat_item.picture" class="col-sm-3">
+      <div class="panel panel-{{::options.color}} b wrapper-lg text-center">
+        <img class="img-responsive catalog-item-image" alt="{{::data.sc_cat_item.name}}" style="display: inline" ng-src="{{::data.sc_cat_item.picture}}" />
+      </div>
+    </div>
+    <div ng-class="{true:'col-sm-9',false:'col-sm-12'}[data.sc_cat_item.picture.length > 0]">
+      <div class="panel panel-default">
+        <div class="wrapper-md">
+          <h1 class="h2 m-t-none m-b-sm font-thin">{{::data.sc_cat_item.name}}</h1>
+          <div class="text-muted">{{::data.sc_cat_item.short_description}}</div>
+        </div>
+        <div ng-if="::data.sc_cat_item.description" class="wrapper-md b-t">
+          <div ng-bind-html="::data.sc_cat_item.description"></div>
+        </div>
+        <div ng-if="::data.sc_cat_item.content_type == 'external'" class="wrapper-md"><a ng-href="{{::data.sc_cat_item.url}}" target={{::data.sc_cat_item.target}}>{{::data.sc_cat_item.url}} ➚</a></div>
+				<div ng-if="::data.sc_cat_item.content_type == 'kb'" class="wrapper-md"><a  ng-href="?id=kb_article&sys_id={{::data.sc_cat_item.kb_article}}">${Go to KB Article:} {{::data.sc_cat_item.kb_article_description}}</a></div>
+        <div ng-if="::data.sc_cat_item._fields">
+          <sp-cat-item item="::data.sc_cat_item" />
+          <form>
+            <div ng-class="{'b-t wrapper-md': data.sc_cat_item._view.length}">
+              <!-- display view and model -->
+              <sp-model form-model="::data.sc_cat_item" mandatory="mandatory"></sp-model>
+            </div>
+          </form>
+            <div ng-if="data.sc_cat_item.sys_class_name != 'sc_cat_item_content'" class="b-t wrapper-md">
+              <div class="m-b" ng-if="data.showPrices && (data.sc_cat_item.price || data.sc_cat_item.recurring_price)" >
+                <div ng-if="data.sc_cat_item.price" class="h4 cat_item_price">${Price}: {{data.sc_cat_item.price}}</div>
+                <em ng-if="data.sc_cat_item.recurring_price" class="cat_item_price">${Recurring Price}: {{data.sc_cat_item.recurring_price + ' ' + data.sc_cat_item.recurring_price_frequency}}</em>
+              </div>
+              <now-attachments-list template="sp_attachment_single_line" ></now-attachments-list>
+              <span ng-if="::c.allowOrder()">
+                <select ng-if="c.showQuantitySelector()"
+                        ng-disabled="submitted"
+                        class="form-control quantity-selector"
+                        ng-model="c.quantity"
+                        aria-label="${Quantity}"
+                        ng-options="num for num in [1,2,3,4,5,6,7,8,9,10]">
+                </select>
+                <label ng-if="!submitted" style="float:right;font-weight:normal;cursor:pointer;"><sp-attachment-button></sp-attachment-button><span style="padding-left:4px;">${Add attachments}</span></label>
+                <button ng-if="::c.showOrderNowButton()" tabindex="0" name="submit" ng-disabled="submitted" ng-click="triggerOnSubmit()" class="btn btn-primary">{{submitButtonMsg}}</button>
+                <button tabindex="0" ng-if="c.showAddCartBtn()" name="submit" ng-disabled="submitted" ng-click="triggerAddToCart()" class="btn btn-default">${Add to Cart}</button>
+                <span ng-if="submitting" style="padding-left:4px">${Submitting...}</span>
+              </span>
+              <div ng-if="hasMandatory(mandatory)" class="alert alert-info" style="margin-top: .5em">
+                <span ng-if="hasMandatory(mandatory)">${Required information} </span>
+                <span ng-repeat="f in mandatory" class="label label-danger" style="margin-right: .5em; display: inline-block;">{{::f.label}}</span>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div ng-if="::!data.sc_cat_item" >
+    <div class="panel panel-default">
+      <div class="panel-heading"><h4 class="panel-title">${Item not found}</h4></div>
+      <div class="panel-body wrapper">
+        <p>${This item is not found or currently not available}</p>
+        <p>${Suggestions}:</p>
+        <ul>
+          <li>${Try searching for the item}</li>
+          <li>${Go to the Service Catalog homepage}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="sr-only" aria-live="assertive">{{c.status}}</div>
+</div>]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</application>
+        <file_path/>
+        <instance_id>eac3d649dbd17fc0b847ac44d4961944</instance_id>
+        <instance_name>dev85588</instance_name>
+        <name>sp_widget_daf417eb2f3120105042d6ab2799b659</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;sc&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[function ($scope, $http, spUtil, nowAttachmentHandler, $rootScope, $sanitize, $window, $sce, i18n, $timeout, $log, spAriaUtil, $location, spModal) {
+	var c = this;
+	c.quantity = 1;
+	if ($scope.data.sc_cat_item)
+		$scope.data.sc_cat_item.description = $sce.trustAsHtml($scope.data.sc_cat_item.description);
+	c.widget._debugContextMenu = [
+		[ i18n.getMessage("Open") + " sc_cat_item", function(){
+			var item = c.data.sc_cat_item;
+			$window.open("/sp_config?id=form&amp;table=" + item.table + "&amp;sys_id=" + item.sys_id); }]
+	];
+	c.showAddCartBtn = function() {
+		return c.options.show_add_cart_button &amp;&amp;
+			c.data.sc_cat_item.sys_class_name !== "sc_cat_item_producer" &amp;&amp;
+			!c.data.sc_cat_item.no_cart;
+	}
+
+	c.showQuantitySelector = function() {
+		return c.data.sc_cat_item.sys_class_name !== "sc_cat_item_producer" &amp;&amp;
+			!c.data.sc_cat_item.no_quantity &amp;&amp;
+			(!c.data.sc_cat_item.no_order_now || !c.data.sc_cat_item.no_cart);
+	}
+
+	c.showOrderNowButton = function() {
+		return c.data.sc_cat_item.use_sc_layout || !c.data.sc_cat_item.no_order_now;
+	}
+
+	c.allowOrder = function() {
+		if (c.data.sc_cat_item.use_sc_layout)
+			return true;
+
+		if (c.data.sc_cat_item.no_order)
+			return false;
+
+		if (c.data.sc_cat_item.no_order_now &amp;&amp; c.data.sc_cat_item.no_cart)
+			return false;
+
+		return true;
+	}
+
+	$scope.$on('dialog.upload_too_large.show', function(e){
+		$log.error($scope.m.largeAttachmentMsg);
+		spUtil.addErrorMessage($scope.m.largeAttachmentMsg);
+	});
+
+	$scope.m = $scope.data.msgs;
+	$scope.submitButtonMsg = $scope.m.submitMsg;
+	var ah = $scope.attachmentHandler = new nowAttachmentHandler(setAttachments, appendError);
+	function appendError(error) {
+		spUtil.addErrorMessage(error.msg + error.fileName);
+	}
+	ah.setParams('sp_portal', $scope.data._attachmentGUID, 1024 * 1024 * $scope.data.maxAttachmentSize);
+	function setAttachments(attachments, action) {
+		$scope.attachments = attachments;
+		if (action === "added")
+			$scope.setFocusToAttachment();
+		if (action === "renamed")
+			spAriaUtil.sendLiveMessage($scope.m.renameSuccessMsg);
+		if (action === "deleted")
+			spAriaUtil.sendLiveMessage($scope.m.deleteSuccessMsg);
+	}
+	$scope.attachmentHandler.getAttachmentList();
+
+	$scope.confirmDeleteAttachment = function(attachment) {
+		spModal.confirm($scope.data.msgs.delete_attachment).then(function() {
+          $scope.attachmentHandler.deleteAttachment(attachment);
+          $scope.setFocusToAttachmentButton();
+		});
+  }
+
+	// Breadcrumbs
+	if ($scope.data.sc_cat_item) {
+		if (!$scope.data.categories)
+			$scope.data.categories = [];
+		$scope.data.categories.unshift({label: $scope.data.msgs.serviceCatalogMsg, url: '?id=' + $scope.data.sc_catalog_page});
+		$scope.data.categories.push({label: $scope.data.sc_cat_item.name, url: '#'});
+		$timeout(function() {
+			$scope.$emit('sp.update.breadcrumbs', $scope.data.categories);
+		});
+		spUtil.setSearchPage('sc');
+	} else {
+		var notFoundBC = [{label: $scope.data.msgs.serviceCatalogMsg, url: '?id=' + $scope.data.sc_catalog_page}];
+		$timeout(function() {
+			$scope.$emit('sp.update.breadcrumbs', notFoundBC);
+		});
+		spUtil.setSearchPage('sc');
+	}
+
+	c.getItemId = function () {
+		return $scope.data.sc_cat_item ? $scope.data.sc_cat_item.sys_id : -1;
+	};
+
+	var g_form;
+	$scope.$on('spModel.gForm.initialized', function(e, gFormInstance){
+		if (gFormInstance.getSysId() != -1 &amp;&amp; gFormInstance.getSysId() != c.getItemId())
+			return;
+		g_form = gFormInstance;
+
+		// This runs after all onSubmit scripts have executed
+		g_form.$private.events.on('submitted', function(){
+			if ($scope.data.sc_cat_item.item_action === "order")
+				getOne();
+			else if ($scope.data.sc_cat_item.item_action === "add_to_cart")
+				addToCart();
+		});
+	});
+
+	$scope.triggerAddToCart = function() {
+		$scope.data.sc_cat_item.item_action = "add_to_cart";
+		$scope.data.sc_cat_item.quantity = c.quantity;
+		if (g_form)
+			g_form.submit();
+	}
+
+	$scope.triggerOnSubmit = function(){
+		$scope.data.sc_cat_item.item_action = "order";
+		$scope.data.sc_cat_item.quantity = c.quantity;
+		if (g_form)
+			g_form.submit();
+	}
+
+	// order / create request
+	function getOne() {
+		postCatalogFormRequest().success(function(response) {
+			var a = response.result ? response.result : response.answer;
+			var n = a.number;
+			$scope.$emit("$$uiNotification", response.$$uiNotification ? response.$$uiNotification : a.$$uiNotification);
+			$scope.$emit("$sp.sc_cat_item.submitted", a);
+			if (n)
+				issueMessage(n, a.table, a.sys_id, a.redirect_to, a.redirect_portal_url);
+			$scope.submitting = false;
+			$scope.submitButtonMsg = $scope.m.submittedMsg;
+		}).error(function(response) {
+			console.log(response);
+		});
+	}
+
+	function addToCart() {
+		postCatalogFormRequest().success(function(response) {
+			$rootScope.$broadcast("$sp.service_catalog.cart.add_item");
+			$rootScope.$broadcast("$sp.service_catalog.cart.update");
+			//spUtil.addInfoMessage("Added item to shopping cart");
+			$scope.submitting = false;
+			c.status = "Added item to shopping cart";
+		});
+	}
+
+	function postCatalogFormRequest() {
+		setFieldsReadonly();
+		$scope.submitted = true;
+		$scope.submitting = true;
+		var requestUrl;
+		var reqData = {};
+ 		if ($scope.data.sc_cat_item.sys_class_name === "sc_cat_item_producer") {
+			requestUrl = '/api/sn_sc/v1/servicecatalog/items/' + $scope.data.sc_cat_item.sys_id + '/submit_producer';
+			for(var obj in $scope.data.sc_cat_item._fields)
+				reqData[$scope.data.sc_cat_item._fields[obj].name] = $scope.data.sc_cat_item._fields[obj].value;
+			reqData = {'variables' : reqData, 'attachment_id' : $scope.data._attachmentGUID, 'attachment_table': 'sp_portal', 'get_portal_messages': 'true'};
+		}
+		else {
+			requestUrl = spUtil.getURL('sc_cat_item');
+			reqData = $scope.data.sc_cat_item;
+			reqData._attachmentGUID = $scope.data._attachmentGUID;
+		}
+		return $http.post(requestUrl, reqData);
+	}
+
+	// spModel populates mandatory - hasMandatory is called by the submit button
+	$scope.hasMandatory = function(mandatory) {
+		return mandatory &amp;&amp; mandatory.length &gt; 0;
+	};
+
+	// switch catalog items
+	var unregister = $scope.$on('$sp.list.click', onListClick);
+	$scope.$on("$destroy", function() {
+		unregister();
+	});
+
+	function onListClick(evt, arg) {
+		$scope.data.sys_id = arg.sys_id;
+		spUtil.update($scope);
+	}
+
+	function setFieldsReadonly(){
+		var allFields = g_form.getFieldNames();
+		for(var fieldName in allFields){
+			g_form.setReadOnly(allFields[fieldName], true);
+		}
+	}
+
+	function issueMessage(n, table, sys_id, redirectTo, redirectUrl) {
+		var page = table == 'sc_request' ? 'sc_request' : 'ticket';
+		if (c.options.page) {page = c.options.page;}
+		if (c.options.table) {table = c.options.table;}
+		if (redirectTo == 'catalog_home') page = 'sc_home';
+		var url = spUtil.format(c.options.url, {page: page, table: table, sys_id: sys_id});
+		if (c.options.auto_redirect == "true") {
+			$timeout(function() {
+				if (redirectUrl)
+					$location.url(redirectUrl);
+				else
+					$location.url(url);
+			}, 1000);
+			return;
+		}
+
+		var t = $scope.m.createdMsg + " " + n + " - ";
+		t += $scope.m.trackMsg;
+		t += ' &lt;a href="' + url + '"&gt;' + $scope.m.clickMsg + '&lt;/a&gt;';
+		spUtil.addInfoMessage(t);
+	}
+}]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;.panel-button {
+  float: none;
+}
+
+.sp-attachment-add {
+  padding: 5px;
+}
+
+.p-t-none {
+  padding-top: 0 !important;
+}
+
+.file-list-wrap {
+	margin-bottom: 10px;
+}
+
+.quantity-selector {
+  display: inline-block;
+  width: 65px;
+  padding-top: 2px;
+}
+
+.sp-sc-single-checkbox&amp;gt;div {
+  display : inline !important;
+}&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list&gt;color&lt;/field_list&gt;&lt;has_preview&gt;false&lt;/has_preview&gt;&lt;id&gt;covid-sc-cat-item&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function(scope, elem){
+    scope.setFocusToAttachment = function () {
+		setTimeout(function () {
+			var inboxArray = elem.find("a.view-attachment");
+			inboxArray.focus();
+		}, 100);
+	}
+	scope.setFocusToAttachmentButton = function () {
+		elem.find('.sp-attachment-add')[0].focus();
+	}
+}
+	]]&gt;&lt;/link&gt;&lt;name&gt;SC Catalog Item&lt;/name&gt;&lt;option_schema&gt;[{"name":"show_add_cart_button","label":"Show Add Cart Button","type":"boolean"},{"hint":"Define a URL Format for successful order page","name":"url","label":"Custom URL Format","type":"string"},{"displayValue":"Page","name":"page","label":"Successful Order Page","type":"reference","value":"sp_page","ed":{"reference":"sp_page"}},{"displayValue":"Table","name":"table","label":"Successful Order Table","type":"reference","value":"sys_db_object","ed":{"reference":"sys_db_object"}},{"hint":"Enable auto-redirection after ordering an item","name":"auto_redirect","label":"Auto Redirect on Successful Order","type":"boolean"}]&lt;/option_schema&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles&gt;snc_external,snc_internal&lt;/roles&gt;&lt;script&gt;&lt;![CDATA[// populate the 'data' variable with catalog item, variables, and variable view
+(function() {
+	// portal can specify a catalog and catalog category home page
+	data.sc_catalog_page = $sp.getDisplayValue("sc_catalog_page") || "sc_home";
+	data.sc_category_page = $sp.getDisplayValue("sc_category_page") || "sc_category";
+
+	options.show_add_cart_button = (options.show_add_cart_button == "true");
+
+	if (options.page) {
+		var pageGR = new GlideRecord("sp_page");
+		options.page = (pageGR.get(options.page)) ? pageGR.getValue("id") : null;
+	}
+
+	if (options.table) {
+		var tableGR = new GlideRecord("sys_db_object");
+		options.table = (tableGR.get(options.table)) ? tableGR.getValue("name") : null;
+	}
+
+	options.url = options.url || "?id={page}&amp;table={table}&amp;sys_id={sys_id}";
+	data.showPrices = $sp.showCatalogPrices();
+	var m = data.msgs = {};
+	m.serviceCatalogMsg = gs.getMessage("Service Catalog");
+	m.submitMsg = gs.getMessage("Submit");
+	m.submittedMsg = gs.getMessage("Submitted");
+	m.createdMsg = gs.getMessage("Created");
+	m.trackMsg = gs.getMessage("track using 'Requests' in the header or");
+	m.clickMsg = gs.getMessage("click here to view");
+	m.dialogTitle = gs.getMessage("Delete Attachment");
+	m.dialogMessage = gs.getMessage("Are you sure?");
+	m.dialogOK = gs.getMessage("OK");
+	m.dialogCancel = gs.getMessage("Cancel");
+	data.maxAttachmentSize = parseInt(gs.getProperty("com.glide.attachment.max_size", 1024));
+	if (isNaN(data.maxAttachmentSize))
+		data.maxAttachmentSize = 24;
+	m.largeAttachmentMsg = gs.getMessage("Attached files must be smaller than {0} MB - please try again", "" + data.maxAttachmentSize);
+	m.renameSuccessMsg = gs.getMessage("Attachment renamed successfully");
+	m.deleteSuccessMsg = gs.getMessage("Attachment deleted successfully");
+
+	if (input)
+		data.sys_id = input.sys_id;
+	else if (options.sys_id)
+		data.sys_id = options.sys_id;
+	else
+		data.sys_id = $sp.getParameter("sys_id") || $sp.getParameter('sl_sys_id');
+
+	if (!data.sys_id)
+		return;
+
+	data._attachmentGUID = gs.generateGUID();
+	var validatedItem = new sn_sc.CatItem('' + data.sys_id);
+	if (!validatedItem.canView() || !validatedItem.isVisibleServicePortal())
+		return;
+
+	data.sc_cat_item = $sp.getCatalogItem({
+		sys_id: data.sys_id + '',
+		is_ordering: true
+	});
+	if (data.sc_cat_item.category) {
+		var categoryJS = new sn_sc.CatCategory(data.sc_cat_item.category);
+		data.category = {
+			name: categoryJS.getTitle(),
+			url: '?id='+data.sc_category_page+'&amp;sys_id=' + data.sc_cat_item.category
+		};
+		data.categories = [];
+		data.categories.push({
+			label: categoryJS.getTitle(),
+			url: '?id='+data.sc_category_page+'&amp;sys_id=' + data.sc_cat_item.category
+		});
+		while(categoryJS &amp;&amp; categoryJS.getParent()) {
+			var parentId =  categoryJS.getParent();
+			categoryJS = new sn_sc.CatCategory(parentId);
+			var category = {
+				label: categoryJS.getTitle(),
+				url: '?id='+data.sc_category_page+'&amp;sys_id=' + parentId
+			};
+			data.categories.unshift(category);
+		}
+	}
+
+	$sp.logStat('Catalog View', data.sc_cat_item.sys_class_name, data.sys_id, data.sc_cat_item.name);
+	data.msgs.delete_attachment = gs.getMessage("Delete Attachment?");
+})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2021-01-25 15:39:52&lt;/sys_created_on&gt;&lt;sys_id&gt;daf417eb2f3120105042d6ab2799b659&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name&gt;SC Catalog Item&lt;/sys_name&gt;&lt;sys_package display_value="COVID-19" source="x_179189_covid_19"&gt;317ff3b52f2120105042d6ab2799b68a&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="COVID-19"&gt;317ff3b52f2120105042d6ab2799b68a&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_daf417eb2f3120105042d6ab2799b659&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2021-01-25 15:40:08&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div id="sc_cat_item" &gt;
+  &lt;div class="row" ng-if="::data.sc_cat_item" &gt;
+    &lt;div ng-if="::data.sc_cat_item.picture" class="col-sm-3"&gt;
+      &lt;div class="panel panel-{{::options.color}} b wrapper-lg text-center"&gt;
+        &lt;img class="img-responsive catalog-item-image" alt="{{::data.sc_cat_item.name}}" style="display: inline" ng-src="{{::data.sc_cat_item.picture}}" /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div ng-class="{true:'col-sm-9',false:'col-sm-12'}[data.sc_cat_item.picture.length &gt; 0]"&gt;
+      &lt;div class="panel panel-default"&gt;
+        &lt;div class="wrapper-md"&gt;
+          &lt;h1 class="h2 m-t-none m-b-sm font-thin"&gt;{{::data.sc_cat_item.name}}&lt;/h1&gt;
+          &lt;div class="text-muted"&gt;{{::data.sc_cat_item.short_description}}&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div ng-if="::data.sc_cat_item.description" class="wrapper-md b-t"&gt;
+          &lt;div ng-bind-html="::data.sc_cat_item.description"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div ng-if="::data.sc_cat_item.content_type == 'external'" class="wrapper-md"&gt;&lt;a ng-href="{{::data.sc_cat_item.url}}" target={{::data.sc_cat_item.target}}&gt;{{::data.sc_cat_item.url}} ➚&lt;/a&gt;&lt;/div&gt;
+				&lt;div ng-if="::data.sc_cat_item.content_type == 'kb'" class="wrapper-md"&gt;&lt;a  ng-href="?id=kb_article&amp;sys_id={{::data.sc_cat_item.kb_article}}"&gt;${Go to KB Article:} {{::data.sc_cat_item.kb_article_description}}&lt;/a&gt;&lt;/div&gt;
+        &lt;div ng-if="::data.sc_cat_item._fields"&gt;
+          &lt;sp-cat-item item="::data.sc_cat_item" /&gt;
+          &lt;form&gt;
+            &lt;div ng-class="{'b-t wrapper-md': data.sc_cat_item._view.length}"&gt;
+              &lt;!-- display view and model --&gt;
+              &lt;sp-model form-model="::data.sc_cat_item" mandatory="mandatory"&gt;&lt;/sp-model&gt;
+            &lt;/div&gt;
+          &lt;/form&gt;
+            &lt;div ng-if="data.sc_cat_item.sys_class_name != 'sc_cat_item_content'" class="b-t wrapper-md"&gt;
+              &lt;div class="m-b" ng-if="data.showPrices &amp;&amp; (data.sc_cat_item.price || data.sc_cat_item.recurring_price)" &gt;
+                &lt;div ng-if="data.sc_cat_item.price" class="h4 cat_item_price"&gt;${Price}: {{data.sc_cat_item.price}}&lt;/div&gt;
+                &lt;em ng-if="data.sc_cat_item.recurring_price" class="cat_item_price"&gt;${Recurring Price}: {{data.sc_cat_item.recurring_price + ' ' + data.sc_cat_item.recurring_price_frequency}}&lt;/em&gt;
+              &lt;/div&gt;
+              &lt;now-attachments-list template="sp_attachment_single_line" &gt;&lt;/now-attachments-list&gt;
+              &lt;span ng-if="::c.allowOrder()"&gt;
+                &lt;select ng-if="c.showQuantitySelector()"
+                        ng-disabled="submitted"
+                        class="form-control quantity-selector"
+                        ng-model="c.quantity"
+                        aria-label="${Quantity}"
+                        ng-options="num for num in [1,2,3,4,5,6,7,8,9,10]"&gt;
+                &lt;/select&gt;
+                &lt;label ng-if="!submitted" style="float:right;font-weight:normal;cursor:pointer;"&gt;&lt;sp-attachment-button&gt;&lt;/sp-attachment-button&gt;&lt;span style="padding-left:4px;"&gt;${Add attachments}&lt;/span&gt;&lt;/label&gt;
+                &lt;button ng-if="::c.showOrderNowButton()" tabindex="0" name="submit" ng-disabled="submitted" ng-click="triggerOnSubmit()" class="btn btn-primary"&gt;{{submitButtonMsg}}&lt;/button&gt;
+                &lt;button tabindex="0" ng-if="c.showAddCartBtn()" name="submit" ng-disabled="submitted" ng-click="triggerAddToCart()" class="btn btn-default"&gt;${Add to Cart}&lt;/button&gt;
+                &lt;span ng-if="submitting" style="padding-left:4px"&gt;${Submitting...}&lt;/span&gt;
+              &lt;/span&gt;
+              &lt;div ng-if="hasMandatory(mandatory)" class="alert alert-info" style="margin-top: .5em"&gt;
+                &lt;span ng-if="hasMandatory(mandatory)"&gt;${Required information} &lt;/span&gt;
+                &lt;span ng-repeat="f in mandatory" class="label label-danger" style="margin-right: .5em; display: inline-block;"&gt;{{::f.label}}&lt;/span&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div ng-if="::!data.sc_cat_item" &gt;
+    &lt;div class="panel panel-default"&gt;
+      &lt;div class="panel-heading"&gt;&lt;h4 class="panel-title"&gt;${Item not found}&lt;/h4&gt;&lt;/div&gt;
+      &lt;div class="panel-body wrapper"&gt;
+        &lt;p&gt;${This item is not found or currently not available}&lt;/p&gt;
+        &lt;p&gt;${Suggestions}:&lt;/p&gt;
+        &lt;ul&gt;
+          &lt;li&gt;${Try searching for the item}&lt;/li&gt;
+          &lt;li&gt;${Go to the Service Catalog homepage}&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="sr-only" aria-live="assertive"&gt;{{c.status}}&lt;/div&gt;
+&lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-277017535</payload_hash>
+        <record_name>SC Catalog Item</record_name>
+        <reverted_from/>
+        <source>5aa04c8a2f2120105042d6ab2799b6f6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-25 15:40:08</sys_created_on>
+        <sys_id>c60517eb2f3120105042d6ab2799b653</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1773a33c9370000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-25 15:40:08</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>020517eb15312010c077184b93259453</update_guid>
+        <update_guid_history>020517eb15312010c077184b93259453:-277017535,5ef417eb233120106e5dccdbefa7ac5b:540165373</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">351997af2f3120105042d6ab2799b660</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-25 15:57:51</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>10ca0da7bcb94d6a907fc1e40918e224</sys_id>
+        <sys_metadata>daf417eb2f3120105042d6ab2799b659</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SC Catalog Item</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_scope_delete display_value="">01bdd0310e6149608055cb01382d20a9</sys_scope_delete>
+        <sys_update_name>sp_widget_daf417eb2f3120105042d6ab2799b659</sys_update_name>
+        <sys_update_version display_value="sp_widget_daf417eb2f3120105042d6ab2799b659">c60517eb2f3120105042d6ab2799b653</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-25 15:57:51</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page">
+    <sp_page action="DELETE">
+        <category>sc</category>
+        <css>.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  //margin-top: -10px;
+  //padding-left: 0px;
+  //padding-right: 15px;
+}
+
+.page {
+	background-color: $background-color;
+}</css>
+        <draft>false</draft>
+        <dynamic_title_structure>%name</dynamic_title_structure>
+        <id>covid_cat_item</id>
+        <internal>false</internal>
+        <omit_watcher>false</omit_watcher>
+        <public>false</public>
+        <roles>snc_external,snc_internal</roles>
+        <seo_script/>
+        <short_description>Display a Catalog Item</short_description>
+        <sys_class_name>sp_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-22 18:52:26</sys_created_on>
+        <sys_id>6944e43a2ff120105042d6ab2799b6a1</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>covid_cat_item</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_update_name>sp_page_6944e43a2ff120105042d6ab2799b6a1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-22 20:03:41</sys_updated_on>
+        <title>COVID Cat Item</title>
+        <use_seo_script>false</use_seo_script>
+    </sp_page>
+    <sys_translated_text action="DELETE" query="documentkey=6944e43a2ff120105042d6ab2799b6a1"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</application>
+        <file_path/>
+        <instance_id>eac3d649dbd17fc0b847ac44d4961944</instance_id>
+        <instance_name>dev85588</instance_name>
+        <name>sp_page_6944e43a2ff120105042d6ab2799b6a1</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page"><sp_page action="INSERT_OR_UPDATE"><category>sc</category><css>.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  //margin-top: -10px;
+  //padding-left: 0px;
+  //padding-right: 15px;
+}
+
+.page {
+	background-color: $background-color;
+}</css><draft>false</draft><dynamic_title_structure>%name</dynamic_title_structure><id>covid_cat_item</id><internal>false</internal><omit_watcher>false</omit_watcher><public>false</public><roles>snc_external,snc_internal</roles><seo_script/><short_description>Display a Catalog Item</short_description><sys_class_name>sp_page</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-01-22 18:52:26</sys_created_on><sys_id>6944e43a2ff120105042d6ab2799b6a1</sys_id><sys_mod_count>7</sys_mod_count><sys_name>covid_cat_item</sys_name><sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package><sys_policy/><sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope><sys_update_name>sp_page_6944e43a2ff120105042d6ab2799b6a1</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-01-22 20:03:41</sys_updated_on><title>COVID Cat Item</title><use_seo_script>false</use_seo_script></sp_page><sys_translated_text action="delete_multiple" query="documentkey=6944e43a2ff120105042d6ab2799b6a1"/></record_update>]]></payload>
+        <payload_hash>-1140146972</payload_hash>
+        <record_name>covid_cat_item</record_name>
+        <reverted_from/>
+        <source>5aa04c8a2f2120105042d6ab2799b6f6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-22 20:03:41</sys_created_on>
+        <sys_id>2194b8f22f3520105042d6ab2799b6ae</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1772bb200450000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-22 20:03:41</sys_updated_on>
+        <type>Page</type>
+        <update_guid>6994b8f2c0352010f4cd9215f6213ead</update_guid>
+        <update_guid_history>6994b8f2c0352010f4cd9215f6213ead:-1140146972,6e03f4b23e35201095b519c63b9dc0b7:995532525,ce68e8faa2f1201015f9b616d743b32c:1131836197,1d58a8fa50f120106df0d4b6d8df4407:-1132649216,7f3868fa91f1201060fecb85e43d46aa:-1488989312,77b5687abdf12010d93fc852f8ccc5ed:-1759220583,e654683aa4f12010c49584a35cdb8fb8:-1187061374,b144e43af1f12010362aa7ca431d3aa5:2083237555</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">15525b6b2f3120105042d6ab2799b67a</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-25 15:28:20</sys_created_on>
+        <sys_db_object display_value="" name="sp_page">sp_page</sys_db_object>
+        <sys_id>174ddfe2989c4370835b19c4622a6710</sys_id>
+        <sys_metadata>6944e43a2ff120105042d6ab2799b6a1</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>covid_cat_item</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_scope_delete display_value="">01bdd0310e6149608055cb01382d20a9</sys_scope_delete>
+        <sys_update_name>sp_page_6944e43a2ff120105042d6ab2799b6a1</sys_update_name>
+        <sys_update_version display_value="sp_page_6944e43a2ff120105042d6ab2799b6a1">2194b8f22f3520105042d6ab2799b6ae</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-25 15:28:20</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <business_calendar/>
+        <condition/>
+        <conditional>false</conditional>
+        <entered_time>1970-01-01 00:00:00</entered_time>
+        <name>Daily COVID Data Update per State</name>
+        <offset/>
+        <offset_type/>
+        <run_as display_value="Jordan Rogus">6816f79cc0a8016401c5a33be04be441</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period/>
+        <run_start>2021-01-11 20:10:24</run_start>
+        <run_time>1970-01-01 07:30:00</run_time>
+        <run_type>daily</run_type>
+        <script><![CDATA[// Run API to retrieve COVID data daily
+try {
+    var r = new sn_ws.RESTMessageV2('x_179189_covid_19.COVID-19', 'GET Stats by State from Yesterday');
+
+    var response = r.execute();
+    var responseBody = response.getBody();
+    var httpStatus = response.getStatusCode();
+
+    var json = new global.JSON();
+    var parsed = json.decode(responseBody);
+
+    for (i = 0; i < parsed.length; i++) {
+
+        var gr = new GlideRecord("x_179189_covid_19_covid_data_us");
+        gr.initialize();
+
+        // Transform State
+        var grState = new GlideRecord("sys_report_map");
+        grState.addEncodedQuery('parent=6ee51951d7320200bd4a4ebfae610354^keyLIKE' + parsed[i].state); //Parent is United States of America and Key 'Contains' the source state
+        grState.query();
+        if (grState.next()) {
+            gr.state = grState.getUniqueValue();
+        } else {
+            // If not found, skip iteration of for loop
+            continue;
+        }
+
+        // Transform date
+        var year = parsed[i].date.toString().substring(0, 4);
+        var month = parsed[i].date.toString().substring(4, 6);
+        var day = parsed[i].date.toString().substring(6, 8);
+        var date = year + '-' + month + '-' + day;
+        gr.u_date_data = date;
+
+        // Map remaining fields
+        gr.u_data_quality_grade = parsed[i].dataQualityGrade;
+        gr.u_death_confirmed = parsed[i].deathConfirmed;
+        gr.u_death_increase = parsed[i].deathIncrease;
+        gr.u_hospitalized_cumulative = parsed[i].hospitalizedCumulative;
+        gr.u_hospitalized_currently = parsed[i].hospitalizedCurrently;
+        gr.u_hospitalized_increase = parsed[i].hospitalizedIncrease;
+        gr.u_negative_increase = parsed[i].negativeIncrease;
+        gr.u_negative_cumulative = parsed[i].negative;
+        gr.u_positive_cumulative = parsed[i].positive;
+        gr.u_positive_increase = parsed[i].positiveIncrease;
+        gr.u_total_tests_performed = parsed[i].totalTestResults;
+        gr.u_total_test_increase = parsed[i].totalTestResultsIncrease;
+
+        // Insert Record
+        gr.insert();
+
+    }
+
+
+} catch (ex) {
+    var message = ex.message;
+}]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-11 20:10:48</sys_created_on>
+        <sys_id>a0ac00572f2520105042d6ab2799b6e0</sys_id>
+        <sys_mod_count>35</sys_mod_count>
+        <sys_name>Daily COVID Data Update per State</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_update_name>sysauto_script_a0ac00572f2520105042d6ab2799b6e0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-12 14:29:33</sys_updated_on>
+        <time_zone/>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>
