@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency">
+    <m2m_sp_widget_dependency action="DELETE">
+        <sp_dependency display_value="HeisenbergRetinaIcons">f7fdd25e87c50300e0ef0cf888cb0b7b</sp_dependency>
+        <sp_widget display_value="to delete">ca6ec9d02f0220105042d6ab2799b671</sp_widget>
+        <sys_class_name>m2m_sp_widget_dependency</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-27 13:47:23</sys_created_on>
+        <sys_id>826e8dd02f0220105042d6ab2799b64a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>HeisenbergRetinaIcons.to delete</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_update_name>m2m_sp_widget_dependency_826e8dd02f0220105042d6ab2799b64a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-27 13:47:23</sys_updated_on>
+    </m2m_sp_widget_dependency>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</application>
+        <file_path/>
+        <instance_id>f181d25edb02fa400e785d00cf96191a</instance_id>
+        <instance_name>dev34661</instance_name>
+        <name>m2m_sp_widget_dependency_826e8dd02f0220105042d6ab2799b64a</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency">
+    <m2m_sp_widget_dependency action="INSERT_OR_UPDATE">
+        <sp_dependency display_value="HeisenbergRetinaIcons">f7fdd25e87c50300e0ef0cf888cb0b7b</sp_dependency>
+        <sp_widget display_value="to delete">ca6ec9d02f0220105042d6ab2799b671</sp_widget>
+        <sys_class_name>m2m_sp_widget_dependency</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-27 13:47:23</sys_created_on>
+        <sys_id>826e8dd02f0220105042d6ab2799b64a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>HeisenbergRetinaIcons.to delete</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_update_name>m2m_sp_widget_dependency_826e8dd02f0220105042d6ab2799b64a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-27 13:47:23</sys_updated_on>
+    </m2m_sp_widget_dependency>
+</record_update>]]></payload>
+        <payload_hash>1565450747</payload_hash>
+        <record_name>HeisenbergRetinaIcons.to delete</record_name>
+        <reverted_from/>
+        <source>951e4b4907522010a112ff4c7c1ed069</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-11 17:16:46</sys_created_on>
+        <sys_id>532e038907522010a112ff4c7c1ed0d3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17792185d5d0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-11 17:16:46</sys_updated_on>
+        <type>Widget Dependency</type>
+        <update_guid>132e0389485220104ebc9385bfbda6d3</update_guid>
+        <update_guid_history>132e0389485220104ebc9385bfbda6d3:1565450747</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="HeisenbergRetinaIcons.to delete">04ee47c907522010a112ff4c7c1ed067</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-11 17:19:49</sys_created_on>
+        <sys_db_object display_value="" name="m2m_sp_widget_dependency">m2m_sp_widget_dependency</sys_db_object>
+        <sys_id>558f7843294345e5a075eb40ef2c2929</sys_id>
+        <sys_metadata>826e8dd02f0220105042d6ab2799b64a</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>HeisenbergRetinaIcons.to delete</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_scope_delete display_value="">01bdd0310e6149608055cb01382d20a9</sys_scope_delete>
+        <sys_update_name>m2m_sp_widget_dependency_826e8dd02f0220105042d6ab2799b64a</sys_update_name>
+        <sys_update_version display_value="m2m_sp_widget_dependency_826e8dd02f0220105042d6ab2799b64a">532e038907522010a112ff4c7c1ed0d3</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-11 17:19:49</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

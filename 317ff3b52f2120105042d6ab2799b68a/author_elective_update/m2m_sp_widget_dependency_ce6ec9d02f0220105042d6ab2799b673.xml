@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency">
+    <m2m_sp_widget_dependency action="DELETE">
+        <sp_dependency display_value="dialog-polyfill">2eaf31f30b301200b0b02c6317673a84</sp_dependency>
+        <sp_widget display_value="to delete">ca6ec9d02f0220105042d6ab2799b671</sp_widget>
+        <sys_class_name>m2m_sp_widget_dependency</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-27 13:47:23</sys_created_on>
+        <sys_id>ce6ec9d02f0220105042d6ab2799b673</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>dialog-polyfill.to delete</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_update_name>m2m_sp_widget_dependency_ce6ec9d02f0220105042d6ab2799b673</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-27 13:47:23</sys_updated_on>
+    </m2m_sp_widget_dependency>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</application>
+        <file_path/>
+        <instance_id>f181d25edb02fa400e785d00cf96191a</instance_id>
+        <instance_name>dev34661</instance_name>
+        <name>m2m_sp_widget_dependency_ce6ec9d02f0220105042d6ab2799b673</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency">
+    <m2m_sp_widget_dependency action="INSERT_OR_UPDATE">
+        <sp_dependency display_value="dialog-polyfill">2eaf31f30b301200b0b02c6317673a84</sp_dependency>
+        <sp_widget display_value="to delete">ca6ec9d02f0220105042d6ab2799b671</sp_widget>
+        <sys_class_name>m2m_sp_widget_dependency</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-27 13:47:23</sys_created_on>
+        <sys_id>ce6ec9d02f0220105042d6ab2799b673</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>dialog-polyfill.to delete</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_update_name>m2m_sp_widget_dependency_ce6ec9d02f0220105042d6ab2799b673</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-27 13:47:23</sys_updated_on>
+    </m2m_sp_widget_dependency>
+</record_update>]]></payload>
+        <payload_hash>916985633</payload_hash>
+        <record_name>dialog-polyfill.to delete</record_name>
+        <reverted_from/>
+        <source>951e4b4907522010a112ff4c7c1ed069</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-11 17:16:46</sys_created_on>
+        <sys_id>ab2e038907522010a112ff4c7c1ed0d5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17792185daa0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-11 17:16:46</sys_updated_on>
+        <type>Widget Dependency</type>
+        <update_guid>6b2e0389da5220104d44a0b81d79abd5</update_guid>
+        <update_guid_history>6b2e0389da5220104d44a0b81d79abd5:916985633</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="dialog-polyfill.to delete">04ee47c907522010a112ff4c7c1ed06c</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-11 17:19:49</sys_created_on>
+        <sys_db_object display_value="" name="m2m_sp_widget_dependency">m2m_sp_widget_dependency</sys_db_object>
+        <sys_id>1ddd038fa7b149d490b648a3ff3b3e24</sys_id>
+        <sys_metadata>ce6ec9d02f0220105042d6ab2799b673</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>dialog-polyfill.to delete</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_scope_delete display_value="">01bdd0310e6149608055cb01382d20a9</sys_scope_delete>
+        <sys_update_name>m2m_sp_widget_dependency_ce6ec9d02f0220105042d6ab2799b673</sys_update_name>
+        <sys_update_version display_value="m2m_sp_widget_dependency_ce6ec9d02f0220105042d6ab2799b673">ab2e038907522010a112ff4c7c1ed0d5</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-11 17:19:49</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
