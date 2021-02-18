@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="US COVID Data By State" max_length="40" name="x_179189_covid_19_covid_data_us" type="collection">
+    <element label="US COVID Data By State" max_length="40" name="x_179189_covid_19_covid_data_us" sizeclass="17526" type="collection">
         <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="State" max_length="32" name="state" read_only="true" reference="sys_report_map" reference_qual="parent=6ee51951d7320200bd4a4ebfae610354^EQ" reference_qual_condition="parent=6ee51951d7320200bd4a4ebfae610354^EQ" type="reference"/>
         <element attributes="edge_encryption_enabled=true" label="Data Quality Grade" max_length="10" name="u_data_quality_grade" read_only="true" type="string"/>
         <element attributes="edge_encryption_enabled=true" label="Date" max_length="40" name="u_date_data" read_only="true" type="glide_date"/>

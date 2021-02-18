@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function(spModal) {
+  /* widget controller */
+  var c = this;
+  
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.title {&#13;
+    color: black;&#13;
+    font-weight: bold;&#13;
+    margin-bottom: 20px;&#13;
+}&#13;
+&#13;
+.parent-container {&#13;
+    /*&#13;
+    border-color: black;&#13;
+    border-style: solid;&#13;
+    border-width: medium;&#13;
+    */&#13;
+    width: 100%;&#13;
+    background-color: $header-color;&#13;
+    color: $default-font-color;&#13;
+    &#13;
+}&#13;
+&#13;
+.submit-button {&#13;
+    color: red;&#13;
+    margin: 0 auto;&#13;
+    display: block;&#13;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>covid-dashboard-control-panel</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>COVID Dashboard Control Panel</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-12 21:33:10</sys_created_on>
+        <sys_id>3062d5a507122010a112ff4c7c1ed0f7</sys_id>
+        <sys_mod_count>37</sys_mod_count>
+        <sys_name>COVID Dashboard Control Panel</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_update_name>sp_widget_3062d5a507122010a112ff4c7c1ed0f7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-16 18:21:42</sys_updated_on>
+        <template><![CDATA[<div class="title">Inputs</div>
+
+<div class="parent-container">
+
+    <div class="report-types-container">
+
+        <div class="report-types-header">
+            Select Report Types
+        </div>
+
+        <div class="report-types-selections">
+
+            <input type="checkbox" id="bar" name="bar" value="bar">
+            <label for="reportType">Bar Chart</label><br>
+
+            <input type="checkbox" id="pie" name="pie" value="pie">
+            <label for="pie">Pie Chart</label><br>
+
+        </div>
+
+    </div>
+
+    <div class="report-filters-container">
+
+        <div class="report-filters-header">
+            Available Filters
+        </div>
+
+        <div class="report-filters-selections">
+
+            <input type="checkbox" id="date" name="date" value="date">
+            <label for="date">Date</label><br>
+
+            <input type="checkbox" id="state" name="state" value="state">
+            <label for="state">State</label><br>
+
+        </div>
+
+    </div>
+
+    <button class="submit-button">Generate</button>
+
+</div>
+]]></template>
+    </sp_widget>
+</record_update>
