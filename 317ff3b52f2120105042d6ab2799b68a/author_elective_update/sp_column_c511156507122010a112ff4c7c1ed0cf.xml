@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_column">
+    <sp_column action="DELETE">
+        <class_name/>
+        <order>1</order>
+        <size>12</size>
+        <size_lg/>
+        <size_sm/>
+        <size_xs/>
+        <sp_row display_value="1">8d11156507122010a112ff4c7c1ed0cc</sp_row>
+        <sys_class_name>sp_column</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-12 21:27:10</sys_created_on>
+        <sys_id>c511156507122010a112ff4c7c1ed0cf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_update_name>sp_column_c511156507122010a112ff4c7c1ed0cf</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-12 21:27:10</sys_updated_on>
+    </sp_column>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</application>
+        <file_path/>
+        <instance_id>f181d25edb02fa400e785d00cf96191a</instance_id>
+        <instance_name>dev34661</instance_name>
+        <name>sp_column_c511156507122010a112ff4c7c1ed0cf</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_column"><sp_column action="INSERT_OR_UPDATE"><class_name/><order>1</order><size>12</size><size_lg/><size_sm/><size_xs/><sp_row display_value="1">8d11156507122010a112ff4c7c1ed0cc</sp_row><sys_class_name>sp_column</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-02-12 21:27:10</sys_created_on><sys_id>c511156507122010a112ff4c7c1ed0cf</sys_id><sys_mod_count>0</sys_mod_count><sys_name>1</sys_name><sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package><sys_policy/><sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope><sys_update_name>sp_column_c511156507122010a112ff4c7c1ed0cf</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-02-12 21:27:10</sys_updated_on></sp_column></record_update>]]></payload>
+        <payload_hash>-1486612186</payload_hash>
+        <record_name>1</record_name>
+        <reverted_from/>
+        <source>666ecb8907522010a112ff4c7c1ed08a</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-12 21:27:10</sys_created_on>
+        <sys_id>4911156507122010a112ff4c7c1ed0d1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1779823fa8e0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-12 21:27:10</sys_updated_on>
+        <type>Column</type>
+        <update_guid>81111565e3122010682f6a132d1ca9d1</update_guid>
+        <update_guid_history>81111565e3122010682f6a132d1ca9d1:-1486612186</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="1">94b21da507122010a112ff4c7c1ed001</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-12 21:34:13</sys_created_on>
+        <sys_db_object display_value="" name="sp_column">sp_column</sys_db_object>
+        <sys_id>2164b49f10fa451484cd554613489361</sys_id>
+        <sys_metadata>c511156507122010a112ff4c7c1ed0cf</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_scope_delete display_value="">01bdd0310e6149608055cb01382d20a9</sys_scope_delete>
+        <sys_update_name>sp_column_c511156507122010a112ff4c7c1ed0cf</sys_update_name>
+        <sys_update_version display_value="sp_column_c511156507122010a112ff4c7c1ed0cf">4911156507122010a112ff4c7c1ed0d1</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-12 21:34:13</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
