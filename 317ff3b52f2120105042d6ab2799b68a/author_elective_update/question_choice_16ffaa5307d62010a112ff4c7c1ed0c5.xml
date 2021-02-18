@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
+    <question_choice action="DELETE">
+        <inactive>false</inactive>
+        <misc>0</misc>
+        <order>3</order>
+        <published_ref display_value="Issue with networking">62c78c762fb120105042d6ab2799b613</published_ref>
+        <question display_value="Short description">0affaa5307d62010a112ff4c7c1ed0af</question>
+        <rec_misc>0</rec_misc>
+        <sys_class_name>question_choice</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-18 14:51:07</sys_created_on>
+        <sys_id>16ffaa5307d62010a112ff4c7c1ed0c5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Issue with networking</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_update_name>question_choice_16ffaa5307d62010a112ff4c7c1ed0c5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-18 14:51:07</sys_updated_on>
+        <text>Issue with networking</text>
+        <value>Issue with networking</value>
+    </question_choice>
+    <fx_price action="DELETE" query="id=16ffaa5307d62010a112ff4c7c1ed0c5"/>
+    <fx_price action="DELETE">
+        <amount>0</amount>
+        <currency display_value="USD">USD</currency>
+        <field>misc</field>
+        <id>16ffaa5307d62010a112ff4c7c1ed0c5</id>
+        <parent/>
+        <reference_amount>0</reference_amount>
+        <reference_currency display_value="USD">USD</reference_currency>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-18 14:51:07</sys_created_on>
+        <sys_id>12ffaa5307d62010a112ff4c7c1ed0c7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-18 14:51:07</sys_updated_on>
+        <table>question_choice</table>
+        <type>calculated</type>
+    </fx_price>
+    <fx_price action="DELETE">
+        <amount>0</amount>
+        <currency display_value="USD">USD</currency>
+        <field>rec_misc</field>
+        <id>16ffaa5307d62010a112ff4c7c1ed0c5</id>
+        <parent/>
+        <reference_amount>0</reference_amount>
+        <reference_currency display_value="USD">USD</reference_currency>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-18 14:51:07</sys_created_on>
+        <sys_id>d2ffaa5307d62010a112ff4c7c1ed0c6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-18 14:51:07</sys_updated_on>
+        <table>question_choice</table>
+        <type>calculated</type>
+    </fx_price>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</application>
+        <file_path/>
+        <instance_id>f181d25edb02fa400e785d00cf96191a</instance_id>
+        <instance_name>dev34661</instance_name>
+        <name>question_choice_16ffaa5307d62010a112ff4c7c1ed0c5</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice"><question_choice action="INSERT_OR_UPDATE"><inactive>false</inactive><misc>0</misc><order>3</order><published_ref display_value="Issue with networking">62c78c762fb120105042d6ab2799b613</published_ref><question display_value="Short description">0affaa5307d62010a112ff4c7c1ed0af</question><rec_misc>0</rec_misc><sys_class_name>question_choice</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-02-18 14:51:07</sys_created_on><sys_id>16ffaa5307d62010a112ff4c7c1ed0c5</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Issue with networking</sys_name><sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package><sys_policy/><sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope><sys_update_name>question_choice_16ffaa5307d62010a112ff4c7c1ed0c5</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-02-18 14:51:07</sys_updated_on><text>Issue with networking</text><value>Issue with networking</value></question_choice><fx_price action="delete_multiple" query="id=16ffaa5307d62010a112ff4c7c1ed0c5"/><fx_price action="INSERT_OR_UPDATE"><amount>0</amount><currency display_value="USD">USD</currency><field>misc</field><id>16ffaa5307d62010a112ff4c7c1ed0c5</id><parent/><reference_amount>0</reference_amount><reference_currency display_value="USD">USD</reference_currency><sys_created_by>admin</sys_created_by><sys_created_on>2021-02-18 14:51:07</sys_created_on><sys_id>12ffaa5307d62010a112ff4c7c1ed0c7</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-02-18 14:51:07</sys_updated_on><table>question_choice</table><type>calculated</type></fx_price><fx_price action="INSERT_OR_UPDATE"><amount>0</amount><currency display_value="USD">USD</currency><field>rec_misc</field><id>16ffaa5307d62010a112ff4c7c1ed0c5</id><parent/><reference_amount>0</reference_amount><reference_currency display_value="USD">USD</reference_currency><sys_created_by>admin</sys_created_by><sys_created_on>2021-02-18 14:51:07</sys_created_on><sys_id>d2ffaa5307d62010a112ff4c7c1ed0c6</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-02-18 14:51:07</sys_updated_on><table>question_choice</table><type>calculated</type></fx_price></record_update>]]></payload>
+        <payload_hash>-1516786748</payload_hash>
+        <record_name>Issue with networking</record_name>
+        <reverted_from/>
+        <source>c136e25b07962010a112ff4c7c1ed026</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-18 14:51:07</sys_created_on>
+        <sys_id>96ffaa5307d62010a112ff4c7c1ed0c9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>177b59f8a2a0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-18 14:51:07</sys_updated_on>
+        <type>Question Choice</type>
+        <update_guid>1effaa5338d6201058c48d230408c6c8</update_guid>
+        <update_guid_history>1effaa5338d6201058c48d230408c6c8:-1516786748</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Issue with networking">5f40329307d62010a112ff4c7c1ed0f2</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2021-02-18 14:52:33</sys_created_on>
+        <sys_db_object display_value="" name="question_choice">question_choice</sys_db_object>
+        <sys_id>752ca9a1744b4ed78d1adf9c7f9c9679</sys_id>
+        <sys_metadata>16ffaa5307d62010a112ff4c7c1ed0c5</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Issue with networking</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_parent display_value="">0affaa5307d62010a112ff4c7c1ed0af</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_scope_delete display_value="">01bdd0310e6149608055cb01382d20a9</sys_scope_delete>
+        <sys_update_name>question_choice_16ffaa5307d62010a112ff4c7c1ed0c5</sys_update_name>
+        <sys_update_version display_value="question_choice_16ffaa5307d62010a112ff4c7c1ed0c5">96ffaa5307d62010a112ff4c7c1ed0c9</sys_update_version>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2021-02-18 14:52:33</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
