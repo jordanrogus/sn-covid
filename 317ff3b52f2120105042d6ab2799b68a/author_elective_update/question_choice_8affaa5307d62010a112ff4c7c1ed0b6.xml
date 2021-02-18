@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
+    <question_choice action="DELETE">
+        <inactive>false</inactive>
+        <misc>0</misc>
+        <order>2</order>
+        <published_ref display_value="Issue with email">22c78c762fb120105042d6ab2799b610</published_ref>
+        <question display_value="Short description">0affaa5307d62010a112ff4c7c1ed0af</question>
+        <rec_misc>0</rec_misc>
+        <sys_class_name>question_choice</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-18 14:51:07</sys_created_on>
+        <sys_id>8affaa5307d62010a112ff4c7c1ed0b6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Issue with email</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_update_name>question_choice_8affaa5307d62010a112ff4c7c1ed0b6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-18 14:51:07</sys_updated_on>
+        <text>Issue with email</text>
+        <value>Issue with email</value>
+    </question_choice>
+    <fx_price action="DELETE" query="id=8affaa5307d62010a112ff4c7c1ed0b6"/>
+    <fx_price action="DELETE">
+        <amount>0</amount>
+        <currency display_value="USD">USD</currency>
+        <field>misc</field>
+        <id>8affaa5307d62010a112ff4c7c1ed0b6</id>
+        <parent/>
+        <reference_amount>0</reference_amount>
+        <reference_currency display_value="USD">USD</reference_currency>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-18 14:51:07</sys_created_on>
+        <sys_id>86ffaa5307d62010a112ff4c7c1ed0b8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-18 14:51:07</sys_updated_on>
+        <table>question_choice</table>
+        <type>calculated</type>
+    </fx_price>
+    <fx_price action="DELETE">
+        <amount>0</amount>
+        <currency display_value="USD">USD</currency>
+        <field>rec_misc</field>
+        <id>8affaa5307d62010a112ff4c7c1ed0b6</id>
+        <parent/>
+        <reference_amount>0</reference_amount>
+        <reference_currency display_value="USD">USD</reference_currency>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-18 14:51:07</sys_created_on>
+        <sys_id>4affaa5307d62010a112ff4c7c1ed0b7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-18 14:51:07</sys_updated_on>
+        <table>question_choice</table>
+        <type>calculated</type>
+    </fx_price>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</application>
+        <file_path/>
+        <instance_id>f181d25edb02fa400e785d00cf96191a</instance_id>
+        <instance_name>dev34661</instance_name>
+        <name>question_choice_8affaa5307d62010a112ff4c7c1ed0b6</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice"><question_choice action="INSERT_OR_UPDATE"><inactive>false</inactive><misc>0</misc><order>2</order><published_ref display_value="Issue with email">22c78c762fb120105042d6ab2799b610</published_ref><question display_value="Short description">0affaa5307d62010a112ff4c7c1ed0af</question><rec_misc>0</rec_misc><sys_class_name>question_choice</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-02-18 14:51:07</sys_created_on><sys_id>8affaa5307d62010a112ff4c7c1ed0b6</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Issue with email</sys_name><sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package><sys_policy/><sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope><sys_update_name>question_choice_8affaa5307d62010a112ff4c7c1ed0b6</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-02-18 14:51:07</sys_updated_on><text>Issue with email</text><value>Issue with email</value></question_choice><fx_price action="delete_multiple" query="id=8affaa5307d62010a112ff4c7c1ed0b6"/><fx_price action="INSERT_OR_UPDATE"><amount>0</amount><currency display_value="USD">USD</currency><field>misc</field><id>8affaa5307d62010a112ff4c7c1ed0b6</id><parent/><reference_amount>0</reference_amount><reference_currency display_value="USD">USD</reference_currency><sys_created_by>admin</sys_created_by><sys_created_on>2021-02-18 14:51:07</sys_created_on><sys_id>86ffaa5307d62010a112ff4c7c1ed0b8</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-02-18 14:51:07</sys_updated_on><table>question_choice</table><type>calculated</type></fx_price><fx_price action="INSERT_OR_UPDATE"><amount>0</amount><currency display_value="USD">USD</currency><field>rec_misc</field><id>8affaa5307d62010a112ff4c7c1ed0b6</id><parent/><reference_amount>0</reference_amount><reference_currency display_value="USD">USD</reference_currency><sys_created_by>admin</sys_created_by><sys_created_on>2021-02-18 14:51:07</sys_created_on><sys_id>4affaa5307d62010a112ff4c7c1ed0b7</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-02-18 14:51:07</sys_updated_on><table>question_choice</table><type>calculated</type></fx_price></record_update>]]></payload>
+        <payload_hash>1179530272</payload_hash>
+        <record_name>Issue with email</record_name>
+        <reverted_from/>
+        <source>c136e25b07962010a112ff4c7c1ed026</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-18 14:51:07</sys_created_on>
+        <sys_id>5effaa5307d62010a112ff4c7c1ed0ba</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>177b59f892f0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-18 14:51:07</sys_updated_on>
+        <type>Question Choice</type>
+        <update_guid>d2ffaa533fd620100588c4eefb59e6ba</update_guid>
+        <update_guid_history>d2ffaa533fd620100588c4eefb59e6ba:1179530272</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Issue with email">2740729307d62010a112ff4c7c1ed02f</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2021-02-18 14:52:34</sys_created_on>
+        <sys_db_object display_value="" name="question_choice">question_choice</sys_db_object>
+        <sys_id>50ab8e25561d4f5191fc0ccc8397b8c9</sys_id>
+        <sys_metadata>8affaa5307d62010a112ff4c7c1ed0b6</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Issue with email</sys_name>
+        <sys_package display_value="COVID-19" source="x_179189_covid_19">317ff3b52f2120105042d6ab2799b68a</sys_package>
+        <sys_parent display_value="">0affaa5307d62010a112ff4c7c1ed0af</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="COVID-19">317ff3b52f2120105042d6ab2799b68a</sys_scope>
+        <sys_scope_delete display_value="">01bdd0310e6149608055cb01382d20a9</sys_scope_delete>
+        <sys_update_name>question_choice_8affaa5307d62010a112ff4c7c1ed0b6</sys_update_name>
+        <sys_update_version display_value="question_choice_8affaa5307d62010a112ff4c7c1ed0b6">5effaa5307d62010a112ff4c7c1ed0ba</sys_update_version>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2021-02-18 14:52:34</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
