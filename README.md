@@ -1,4 +1,4 @@
 # sn-covid
-COVID-19 SNOW Personal Project Repository
+WIP COVID-19 SNOW Personal Project Repository
 
-Play around with APIs and visualizing COVID data
+Play around with APIs and visualizing COVID data in a frontend
